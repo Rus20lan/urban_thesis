@@ -1,0 +1,10 @@
+#root {
+  max-width: 1920px;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  /* text-align: center; */
+  --max-width-wrapper: 1180px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
