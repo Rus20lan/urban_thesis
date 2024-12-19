@@ -43,7 +43,16 @@ const Header = () => {
             Мы продаем кроссовки брендов Nike, Adidas, Puma, Reebok, Converse и
             многие другие по низким ценам
           </p>
-          <Btn text="Перейти к покупкам" />
+          <Btn
+            text="Перейти к покупкам"
+            style={{
+              width: '250px',
+              height: '60px',
+              background: 'var(--accent)',
+              padding: '22px 46px',
+              color: '#fff',
+            }}
+          />
         </div>
       </div>
     </div>

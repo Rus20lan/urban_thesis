@@ -1,0 +1,14 @@
+.round_btn {
+  display: flex;
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  background-color: var(--text);
+
+  cursor: pointer;
+}
+.round_btn {
+  width: 30px;
+  height: 30px;
+  padding: 25px;
+}
