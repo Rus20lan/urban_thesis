@@ -1,5 +1,6 @@
-import './style.css';
-import basket from '../../images/basket.svg';
+import "./style.css";
+import basket from "../../images/basket.svg";
+import Badge from "../badge/Badge";
 
 const Basket = () => {
   return (
@@ -7,6 +8,7 @@ const Basket = () => {
       <span>Корзина</span>
       <a>
         <img src={basket}></img>
+        <Badge />
       </a>
     </div>
   );

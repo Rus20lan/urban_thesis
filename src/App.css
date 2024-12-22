@@ -8,3 +8,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+button:active {
+  transform: scale(0.88);
+}

@@ -14,6 +14,9 @@
   margin-right: 10px;
   align-self: center;
 }
+.basket_wrapper a {
+  position: relative;
+}
 .basket_wrapper a > img {
   display: block;
   align-self: flex-end;

@@ -1,14 +1,9 @@
-import './App.css';
-import Catalog from './components/catalog/Catalog';
-import Header from './components/header/Header';
+import { RouterProvider } from "react-router-dom";
+import "./App.css";
+import { router } from "./router/router";
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Catalog />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

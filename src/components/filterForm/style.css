@@ -30,9 +30,10 @@
   display: inline-flex;
   align-items: center;
   user-select: none;
+  cursor: pointer;
 }
 .custom_checkbox + label::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -50,7 +51,7 @@
   /* border-color: #0b76ef; */
   /* background-color: #0b76ef; */
   background-size: contain;
-  background-image: url('../../images/mark.svg');
+  background-image: url("../../images/mark.svg");
 }
 
 .gender_filter_input_group {
@@ -78,11 +79,11 @@
   border-bottom: 1px solid var(--small-text);
   border-right: 1px solid var(--small-text);
 }
-[id^='size-'] {
+[id^="size-"] {
   display: none;
 }
 
-[id^='size-'] + label {
+[id^="size-"] + label {
   margin: 26px auto;
   width: 100%;
   display: inline-block;
