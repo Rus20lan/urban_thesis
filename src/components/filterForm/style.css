@@ -33,7 +33,7 @@
   cursor: pointer;
 }
 .custom_checkbox + label::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -48,61 +48,13 @@
 }
 
 .custom_checkbox:checked + label::before {
-  /* border-color: #0b76ef; */
-  /* background-color: #0b76ef; */
   background-size: contain;
-  background-image: url("../../images/mark.svg");
+  background-image: url('../../images/mark.svg');
 }
 
 .gender_filter_input_group {
   display: flex;
   justify-content: space-between;
-}
-.size_filter_wrapper {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 10px;
-}
-.size_filter_chart {
-  display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  border-top: 1px solid var(--small-text);
-  border-left: 1px solid var(--small-text);
-  gap: 1px;
-}
-.size_filter_chart div {
-  border-bottom: 1px solid var(--small-text);
-  border-right: 1px solid var(--small-text);
-}
-[id^="size-"] {
-  display: none;
-}
-
-[id^="size-"] + label {
-  margin: 26px auto;
-  width: 100%;
-  display: inline-block;
-  vertical-align: middle;
-  text-transform: uppercase;
-
-  /* border: 1px solid #333333; */
-  /* font: 16px/50px 'OpenSansBold'; */
-  text-align: center;
-  /* height: 50px;
-  width: 70px; */
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 16px;
-  text-align: center;
-  color: var(--text);
-  /* margin-right: 21px; */
-  /* margin-top: 30px; */
-  cursor: pointer;
 }
 
 .btns_filter_wrapper {

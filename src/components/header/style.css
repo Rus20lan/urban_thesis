@@ -5,20 +5,15 @@
 }
 .nav_wrapper {
   padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
+
   max-width: var(--max-width-wrapper);
   width: 95%;
   max-height: 44px;
   height: 100%;
   margin: 0 auto;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.5); */
   display: flex;
-  -webkit-box-pack: justify;
-  -moz-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .logo_wrapper {
@@ -40,6 +35,16 @@
   width: 100%;
   align-items: flex-start;
   gap: 40px;
+
+  position: relative;
+}
+.header_sep {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  height: 1px;
+  max-width: var(--max-width-wrapper);
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 .intro_wrapper {
   margin: 100px auto 0 auto;

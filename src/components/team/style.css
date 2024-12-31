@@ -20,9 +20,7 @@
   margin: 0 auto;
   max-width: var(--max-width-wrapper);
   width: 95%;
-  /* min-height: 1190px; */
   height: auto;
-  z-index: 111;
   padding-bottom: 60px;
 }
 .team_title {
@@ -31,7 +29,6 @@
   font-weight: 700;
   font-size: 30px;
   color: #fff;
-  z-index: 111;
 }
 .team_cards_wrapper {
   margin-top: 40px;
@@ -40,7 +37,6 @@
   grid-template-rows: repeat(2, 1fr);
   column-gap: 20px;
   row-gap: 40px;
-  z-index: 100;
 }
 @media (max-width: 710px) {
   .team_cards_wrapper {

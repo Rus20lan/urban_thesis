@@ -1,32 +1,110 @@
 import Nouislider from 'nouislider-react';
-// import 'nouislider/distribute/nouislider.css';
 import './style.css';
-import { useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import Btn from '../btn/Btn';
+import SizeFilterChart from '../sizeFilterChart/SizeFilterChart';
+import { INITIAL_FILTER_DATA } from '../../const/consts';
+import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
+import {
+  empty,
+  filterObjClear,
+  filterObjUpdate,
+  filterPriceUpdate,
+  notEmpty,
+} from '../../redux/filter/filterSlice';
+import { removeItems } from '../../redux/sneakers/sneakersSlice';
 
-const FilterForm = () => {
-  const [priceRange, setPriceRange] = useState({ low: '1850', high: '25768' });
-  const range = { min: 1850, max: 25768 };
-  const start = [1850, 25768];
-  const step = 1;
-  const onChangeSlide = (data: string[]) => {
-    setPriceRange({
-      low: data[0].split('.')[0],
-      high: data[1].split('.')[0],
-    });
+type Props = {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+};
+
+const FilterForm: FC<Props> = ({ setPage, setLoading }) => {
+  const dispatch = useAppDispatch();
+  const { isNotEmpty, filterObj } = useAppSelector((state) => state.filter);
+  const [data, setData] = useState(filterObj);
+  const [price, setPrice] = useState(filterObj.price);
+  const range = {
+    min: INITIAL_FILTER_DATA.PRICE_LOW,
+    max: INITIAL_FILTER_DATA.PRICE_HIGH,
   };
+  const start = [INITIAL_FILTER_DATA.PRICE_LOW, INITIAL_FILTER_DATA.PRICE_HIGH];
+  const step = 1;
+
+  const onChangeSlide = (pric: string[]) => {
+    setPrice({ low: +pric[0].split('.')[0], high: +pric[1].split('.')[0] });
+    // if (!isNotEmpty) dispatch(notEmpty());
+  };
+
+  const handleChangeGender = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = (e.target as HTMLInputElement).value;
+    if (value === 'мужской' || value === 'женский') {
+      setData({ ...filterObj, gender: value });
+    }
+  };
+
+  const handleChangeSize = ({
+    size,
+    action,
+  }: {
+    size: number;
+    action: string;
+  }) => {
+    if (action === 'add') {
+      setData({
+        ...filterObj,
+        size: [...filterObj.size, size],
+      });
+    } else {
+      setData({
+        ...filterObj,
+        size: [...filterObj.size].filter((si) => si !== size),
+      });
+    }
+  };
+
+  useEffect(() => {
+    dispatch(filterObjUpdate(data));
+  }, [data]);
+
+  useEffect(() => {
+    dispatch(filterPriceUpdate(price));
+  }, [price]);
+
+  useEffect(() => {
+    if (filterObj.gender !== null || filterObj.size.length > 0) {
+      dispatch(notEmpty());
+    } else {
+      dispatch(empty());
+    }
+  }, [filterObj]);
+
+  const handleClickClearFilter = () => {
+    dispatch(filterObjClear());
+    dispatch(removeItems());
+    setPage(1);
+    setLoading(true);
+  };
+
+  const handleClickApply = () => {
+    if (isNotEmpty) {
+      dispatch(removeItems());
+      setPage(1);
+      setLoading(true);
+    }
+  };
+
   return (
     <div className="form_wrapper">
       <form>
         <h3 className="title_filter_form">Подбор по параметрам</h3>
-
         <div className="price_filter_wrapper">
           <span>Цена, руб</span>
           <div>
             <div className="nouislider_data">
-              <span className="span_nouislider">{priceRange.low}</span>
+              <span className="span_nouislider">{price.low}</span>
               <div className="separator"></div>
-              <span className="span_nouislider">{priceRange.high}</span>
+              <span className="span_nouislider">{price.high}</span>
             </div>
             <Nouislider
               start={start}
@@ -36,7 +114,6 @@ const FilterForm = () => {
             />
           </div>
         </div>
-
         <div className="gender_filter_wrapper">
           <span>Пол</span>
           <div className="gender_filter_input_group">
@@ -45,6 +122,9 @@ const FilterForm = () => {
               type="checkbox"
               name="male"
               id="male"
+              value={'мужской'}
+              onChange={handleChangeGender}
+              checked={filterObj.gender === 'мужской'}
             />
             <label htmlFor="male">мужской</label>
             <input
@@ -52,62 +132,25 @@ const FilterForm = () => {
               type="checkbox"
               name="female"
               id="female"
+              value={'женский'}
+              onChange={handleChangeGender}
+              checked={filterObj.gender === 'женский'}
             />
             <label htmlFor="female">женский</label>
           </div>
         </div>
-        <div className="size_filter_wrapper">
-          <span>Размер</span>
-          <div className="size_filter_chart">
-            <div>
-              <input type="checkbox" id="size-35" value="35" name="size-35" />
-              <label htmlFor="size-35">35</label>
-            </div>
-            <div>
-              <input type="checkbox" id="size-36" value="36" name="size-36" />
-              <label htmlFor="size-36">36</label>
-            </div>
-            <div>
-              <input type="checkbox" id="size-37" value="37" name="size-37" />
-              <label htmlFor="size-37">37</label>
-            </div>
-            <div>
-              <input type="checkbox" id="size-38" value="38" name="size-38" />
-              <label htmlFor="size-38">38</label>
-            </div>
-            <div>
-              <input type="checkbox" id="size-39" value="39" name="size-39" />
-              <label htmlFor="size-39">39</label>
-            </div>
-            <div>
-              <input type="checkbox" id="size-40" value="40" name="size-40" />
-              <label htmlFor="size-40">40</label>
-            </div>
-
-            <div>
-              <input type="checkbox" id="size-41" value="41" name="size-41" />
-              <label htmlFor="size-41">41</label>
-            </div>
-            <div>
-              <input type="checkbox" id="size-42" value="42" name="size-42" />
-              <label htmlFor="size-42">42</label>
-            </div>
-            <div>
-              <input type="checkbox" id="size-43" value="43" name="size-43" />
-              <label htmlFor="size-43">43</label>
-            </div>
-          </div>
-        </div>
+        <SizeFilterChart handleChangeSize={handleChangeSize} />
         <div className="btns_filter_wrapper">
           <Btn
             text="Применить"
             style={{
-              padding: '22px 48px',
+              padding: '18px 48px',
               width: '100%',
               height: '60px',
               background: 'var(--text)',
               color: '#fff',
             }}
+            handleClick={handleClickApply}
           />
           <Btn
             text="сбросить"
@@ -119,6 +162,7 @@ const FilterForm = () => {
               padding: '0',
               boxSizing: 'border-box',
             }}
+            handleClick={handleClickClearFilter}
           />
         </div>
       </form>

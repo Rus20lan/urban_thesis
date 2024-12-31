@@ -1,0 +1,22 @@
+.phone_h3 {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 1.875rem;
+  line-height: 140%;
+  color: var(--text);
+}
+.address_p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 140%;
+  color: var(--text);
+}
+@media (max-width: 380px) {
+  .phone_h3 {
+    font-size: 1.6rem;
+  }
+  .address_p {
+    font-size: 1rem;
+  }
+}

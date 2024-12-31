@@ -1,9 +1,22 @@
-import "./style.css";
+import { FC } from 'react';
+import './style.css';
 
-const Badge = () => {
+type Props = {
+  value?: string;
+  style?: React.CSSProperties;
+  children?: JSX.Element;
+  handleClick?: () => void;
+};
+
+const Badge: FC<Props> = ({ value, style, children, handleClick }) => {
   return (
-    <div className="badge_shell">
-      <span>10</span>
+    <div
+      className="badge_shell"
+      style={style ? style : {}}
+      onClick={handleClick}
+    >
+      {children && children}
+      {!children && <p>{value || 0}</p>}
     </div>
   );
 };

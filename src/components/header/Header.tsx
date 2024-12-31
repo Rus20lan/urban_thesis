@@ -7,12 +7,13 @@ import BurgerBtn from '../burgerBtn/BurgerBtn';
 import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
 import { toggleBurger } from '../../redux/burger/burgerSlice';
-import Btn from '../btn/Btn';
 import label from '../../images/label.png';
+import { HashLink } from 'react-router-hash-link';
 
 const Header = () => {
   const { isScreenLg } = useResize();
   const { toggle } = useAppSelector((state) => state.burger);
+
   const dispatch = useAppDispatch();
 
   if (toggle && !isScreenLg) {
@@ -32,27 +33,31 @@ const Header = () => {
           {toggle && <BurgerMenu />}
         </div>
       </div>
+
+      <div className="header_sep"></div>
       <div className="intro_wrapper">
         <div className="label">
           <img src={label}></img>
         </div>
-
         <div className="intro">
           <h2>Кроссовки известных брендов с доставкой по России и СНГ</h2>
           <p>
             Мы продаем кроссовки брендов Nike, Adidas, Puma, Reebok, Converse и
             многие другие по низким ценам
           </p>
-          <Btn
-            text="Перейти к покупкам"
+          <HashLink
+            to={`/#catalog`}
             style={{
               width: '250px',
               height: '60px',
               background: 'var(--accent)',
-              padding: '22px 46px',
+              padding: '18px 46px',
               color: '#fff',
+              textDecoration: 'none',
             }}
-          />
+          >
+            Перейти к покупкам
+          </HashLink>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@
   align-items: center;
   height: 24px;
   z-index: 110;
+  cursor: pointer;
 }
 
 .basket_wrapper span {

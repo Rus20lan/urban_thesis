@@ -1,0 +1,45 @@
+.size_filter_wrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.size_filter_chart {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border-top: 1px solid var(--small-text);
+  border-left: 1px solid var(--small-text);
+  gap: 1px;
+}
+.size_filter_chart div {
+  border-bottom: 1px solid var(--small-text);
+  border-right: 1px solid var(--small-text);
+}
+[id^='size-'] {
+  display: none;
+}
+
+[id^='size-'] + label {
+  margin: 26px auto;
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: var(--text);
+  cursor: pointer;
+}
+input[type='checkbox']:ckecked {
+  background-color: var(--bg);
+}
+.active {
+  background: var(--gray);
+}

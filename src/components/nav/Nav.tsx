@@ -1,17 +1,14 @@
-import { useResize } from "../../hooks/useResize";
-import { HashLink } from "react-router-hash-link";
+import { HashLink } from 'react-router-hash-link';
 
-import "./style.css";
+import './style.css';
 const Nav = () => {
-  const resize = useResize();
-
   const links = [
-    { name: "Каталог", anchor: "#catalog" },
-    { name: "О нас", anchor: "#about" },
-    { name: "Подбор товара", anchor: "#quiz" },
-    { name: "Наша команда", anchor: "#team" },
-    { name: "Доставка и оплата", anchor: "#" },
-    { name: "Контакты", anchor: "#contacts" },
+    { name: 'Каталог', anchor: '#catalog' },
+    { name: 'О нас', anchor: '#about' },
+    { name: 'Подбор товара', anchor: '#quiz' },
+    { name: 'Наша команда', anchor: '#team' },
+    { name: 'Доставка и оплата', anchor: '#' },
+    { name: 'Контакты', anchor: '#contacts' },
   ];
 
   return (

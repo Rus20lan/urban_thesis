@@ -1,10 +1,17 @@
+import { FC } from 'react';
+import { ISneaker } from '../../interface/ISneaker';
 import ItemCard from '../itemCard/ItemCard';
 import './style.css';
 
-const SneakersCards = () => {
+type Props = {
+  data: ISneaker[];
+};
+const SneakersCards: FC<Props> = ({ data }) => {
   return (
     <div className="sneakers_container">
-      <ItemCard />
+      {data.map((item, index) => (
+        <ItemCard isLarge={true} key={index} sneaker={item} />
+      ))}
     </div>
   );
 };

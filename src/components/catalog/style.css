@@ -7,12 +7,11 @@
   margin: 0 auto;
   max-width: var(--max-width-wrapper);
   width: 95%;
-  /* background-color: brown; */
   display: grid;
   grid-template-columns: 24% 1fr;
   gap: 20px;
 }
-.catalog_title {
+.content_title {
   margin: 0;
   font-family: var(--third-family);
   font-weight: 700;
@@ -21,4 +20,10 @@
 }
 .col_second {
   margin-top: 85px;
+}
+
+@media (max-width: 1024px) {
+  .catalog_container {
+    grid-template-columns: 1fr;
+  }
 }

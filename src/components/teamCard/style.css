@@ -1,4 +1,6 @@
 .team_card_wrapper {
+  max-height: 480px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -6,10 +8,10 @@
   z-index: 101;
 }
 .team_img_wrapper {
-  height: 90%;
+  height: 80%;
 }
 .team_img_wrapper img {
-  max-width: 100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -37,9 +39,9 @@
   }
 }
 @media (max-width: 710px) {
-  .team_img_wrapper {
+  /* .team_img_wrapper {
     height: 80%;
-  }
+  } */
   .team_name {
     font-size: 1rem;
   }
@@ -48,9 +50,9 @@
   }
 }
 @media (max-width: 597px) {
-  .team_img_wrapper {
+  /* .team_img_wrapper {
     height: 75%;
-  }
+  } */
   .team_name {
     font-size: 0.8rem;
   }

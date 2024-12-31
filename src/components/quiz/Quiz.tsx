@@ -1,9 +1,11 @@
-import { useState } from "react";
-import Btn from "../btn/Btn";
-import "./style.css";
-import QuizQuestion from "../quizQuestion/QuizQuestion";
-import { useAppSelector } from "../../redux/store/hooks";
-import QuizForm from "../quizForm/QuizForm";
+import { useState } from 'react';
+import Btn from '../btn/Btn';
+import './style.css';
+import QuizQuestion from '../quizQuestion/QuizQuestion';
+import { useAppSelector } from '../../redux/store/hooks';
+import FeedbackForm from '../feedbackForm/FeedbackForm';
+import Modal from '../modal';
+import InfoModal from '../infoModal/InfoModal';
 
 export type TSurvey = {
   firstAnswer: string[];
@@ -12,10 +14,18 @@ export type TSurvey = {
 
 const Quiz = () => {
   const [questionNumber, setQuestionNumber] = useState(1);
+  const [isModalActive, setModalActive] = useState(false);
   const { firstAnswer, secondAnswer } = useAppSelector((state) => state.quiz);
 
+  const handleModalOpen = () => {
+    setModalActive(true);
+    // if (questionNumber === 1 && firstAnswer.length === 0)
+  };
+  const handleModalClose = () => {
+    setModalActive(false);
+  };
+
   const handleClick = () => {
-    console.log(firstAnswer.length, secondAnswer.length);
     if (
       (questionNumber === 1 && firstAnswer.length > 0) ||
       (questionNumber === 2 && secondAnswer.length > 0) ||
@@ -24,9 +34,7 @@ const Quiz = () => {
       if (questionNumber <= 4)
         setQuestionNumber((questionNumber) => questionNumber + 1);
     } else {
-      console.log(
-        "Чтобы перейти к следующему шагу нужно выбрать хотя бы один вариант"
-      );
+      handleModalOpen();
     }
   };
 
@@ -62,7 +70,20 @@ const Quiz = () => {
               <div className="quiz_form_wrapper">
                 <h2 className="quiz_form_title">Получить предложение</h2>
                 <p>Получите подборку подходящих для вас моделей на почту</p>
-                <QuizForm />
+                <FeedbackForm
+                  style={{ width: '80%', marginTop: '24px' }}
+                  btnProps={{
+                    text: 'Получить',
+                    style: {
+                      marginTop: '10px',
+                      background: 'var(--accent)',
+                      color: '#fff',
+                      fontFamily: 'var(--second-family)',
+                      height: '60px',
+                    },
+                  }}
+                  isEmailField={true}
+                />
               </div>
             )}
           </div>
@@ -79,12 +100,14 @@ const Quiz = () => {
                   handleClick={handleClick}
                   text="Следующий шаг"
                   style={{
-                    border: "1px solid var(--text)",
-                    borderRadius: "4px",
-                    padding: "16px 41px",
-                    width: "211px",
-                    height: "50px",
-                    background: "rgba(196, 196, 196, 0)",
+                    border: '1px solid var(--text)',
+                    borderRadius: '4px',
+                    padding: '12px 41px',
+                    width: '211px',
+                    height: '50px',
+                    background: 'rgba(196, 196, 196, 0)',
+                    color: 'var(--text)',
+                    fontFamily: 'var(--second-family)',
                   }}
                 />
               </div>
@@ -92,6 +115,15 @@ const Quiz = () => {
           )}
         </div>
       </div>
+      {isModalActive && (
+        <Modal onClose={handleModalClose} isInfoModal={true}>
+          <InfoModal
+            message={
+              'Чтобы перейти к следующему шагу нужно выбрать хотя бы один вариант'
+            }
+          />
+        </Modal>
+      )}
     </div>
   );
 };

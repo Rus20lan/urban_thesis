@@ -1,0 +1,28 @@
+.wrap_body_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content_info_modal {
+  margin: 0 auto;
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+}
+.grid_two_rows {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  padding: 0.5rem 1rem;
+}
+.info_message_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info_message_wrapper p {
+  text-align: center;
+}
+.modal_btn_wrapper {
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}

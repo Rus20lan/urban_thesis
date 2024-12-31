@@ -1,10 +1,8 @@
 .quiz_question_container {
-  /* height: 372px; */
   height: auto;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  /* margin: 20px auto 40px auto; */
 }
 .quiz_question_container h3 {
   margin: 0;
@@ -18,7 +16,6 @@
 }
 .quiz_question_var_1 {
   margin-top: 20px;
-  /* margin-bottom: 40px; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -74,5 +71,21 @@
   .quiz_question_container textarea {
     width: 100%;
     box-sizing: border-box;
+  }
+}
+@media (max-width: 684px) {
+  .quiz_question_var_1 {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+  .quiz_question_size_wrapper {
+    gap: 1%;
+  }
+  .custom_checkbox + label {
+    font-size: 0.88rem;
   }
 }

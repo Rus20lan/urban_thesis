@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 interface QuizState {
   isAnswer: boolean;
@@ -13,7 +13,7 @@ const initialState: QuizState = {
 };
 
 export const quizSlice = createSlice({
-  name: "quiz",
+  name: 'quiz',
   initialState,
   reducers: {
     answerIsGiven: (state) => {
@@ -27,13 +27,17 @@ export const quizSlice = createSlice({
       state.firstAnswer.push(payload);
     },
     removeAnswerInFirstPool: (state, { payload }) => {
-      state.firstAnswer.slice(payload, 1);
+      state.firstAnswer = state.firstAnswer.filter(
+        (_, index) => index !== payload
+      );
     },
     addAnswerInSecondPool: (state, { payload }) => {
       state.secondAnswer.push(payload);
     },
     removeAnswerInSecondPool: (state, { payload }) => {
-      state.secondAnswer.slice(payload, 1);
+      state.secondAnswer = state.secondAnswer.filter(
+        (_, index) => index !== payload
+      );
     },
   },
 });

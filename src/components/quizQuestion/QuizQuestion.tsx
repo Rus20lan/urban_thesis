@@ -1,14 +1,14 @@
-import "./style.css";
-import { questionOne, questionTwo } from "../../const/consts";
-import { FC } from "react";
-import sneaker from "../../images/sneaker.webp";
-import { useAppDispatch, useAppSelector } from "../../redux/store/hooks";
+import './style.css';
+import { questionOne, questionTwo } from '../../const/consts';
+import { FC } from 'react';
+import sneaker from '../../images/sneaker.webp';
+import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
 import {
   addAnswerInFirstPool,
   addAnswerInSecondPool,
   removeAnswerInFirstPool,
   removeAnswerInSecondPool,
-} from "../../redux/quiz/quizSlice";
+} from '../../redux/quiz/quizSlice';
 
 type Props = {
   questionNumber: number;
@@ -108,9 +108,6 @@ const QuizQuestion: FC<Props> = ({ questionNumber }) => {
       );
       break;
     case 4:
-      // children =(
-
-      // );
       break;
   }
 
@@ -119,8 +116,8 @@ const QuizQuestion: FC<Props> = ({ questionNumber }) => {
       className="quiz_question_container"
       style={
         questionNumber === 1
-          ? { marginBottom: "40px" }
-          : { marginBottom: "20px" }
+          ? { marginBottom: '40px' }
+          : { marginBottom: '20px' }
       }
     >
       {children}
