@@ -20,9 +20,6 @@
   margin: 0;
 }
 .quiz_title_note {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 1rem;
   color: #808080;
   margin: 0;
   margin-top: 20px;
@@ -68,14 +65,7 @@
   line-height: 140%;
   color: #fff;
 }
-/* .quiz_question_container {
-  height: 372px;
-  margin: 20px auto 40px auto;
-} */
 .quiz_question_counter span {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 1rem;
   color: #808080;
 }
 @media (max-width: 1180px) {

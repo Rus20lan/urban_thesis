@@ -2,7 +2,6 @@
   padding: 5% 0;
   display: grid;
   grid-template-rows: 2fr 1fr;
-
   row-gap: 7%;
   height: auto;
 }
@@ -32,7 +31,6 @@
   display: flex;
   justify-content: flex-start;
   gap: 5%;
-  /* flex-shrink: 0; */
 }
 .vendor_stock_p {
   display: flex;
@@ -44,9 +42,6 @@
   flex-shrink: 0;
 }
 .vendor_stock_p span {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 1rem;
   color: var(--gray);
   flex-shrink: 0;
 }
@@ -79,10 +74,6 @@
 }
 .sneaker_choosing_size h3 {
   margin: 0;
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 1rem;
-  color: var(--text);
 }
 .sneaker_choosing_size_wrapper {
   display: flex;
@@ -129,12 +120,7 @@
   font-size: 1.88rem;
   color: var(--text);
 }
-.sneaker_old_price {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 1rem;
-  color: var(--gray);
-}
+
 .sneaker_stock_wrapper {
   display: flex;
   flex-direction: column;
@@ -170,13 +156,6 @@
 }
 .offset_desctiption {
   margin-top: 24px;
-}
-.sneaker_desctiption_des {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 140%;
-  color: var(--text);
 }
 .sneaker_spec_wrapper {
   margin-top: 24px;

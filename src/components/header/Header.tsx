@@ -41,7 +41,7 @@ const Header = () => {
         </div>
         <div className="intro">
           <h2>Кроссовки известных брендов с доставкой по России и СНГ</h2>
-          <p>
+          <p className="font_family">
             Мы продаем кроссовки брендов Nike, Adidas, Puma, Reebok, Converse и
             многие другие по низким ценам
           </p>

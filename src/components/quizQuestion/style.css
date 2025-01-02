@@ -59,10 +59,6 @@
   margin-top: 20px;
   margin-bottom: 122px;
   padding: 20px;
-
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 1rem;
   color: var(--small-text);
   border: none;
 }

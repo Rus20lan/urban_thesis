@@ -10,7 +10,7 @@ const Insta = () => {
         <div className="insta_feedback_form_wrapper">
           <div className="insta_feedback_form_intro">
             <h2 className="insta_title">Есть вопросы?</h2>
-            <p className="insta_info">
+            <p className="font_family">
               Заполните форму и наш менеджер свяжется с вами
             </p>
           </div>

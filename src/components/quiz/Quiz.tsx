@@ -19,7 +19,6 @@ const Quiz = () => {
 
   const handleModalOpen = () => {
     setModalActive(true);
-    // if (questionNumber === 1 && firstAnswer.length === 0)
   };
   const handleModalClose = () => {
     setModalActive(false);
@@ -45,7 +44,7 @@ const Quiz = () => {
           {questionNumber < 4 ? (
             <>
               <h2 className="quiz_title">Мы подберем идеальную пару для вас</h2>
-              <p className="quiz_title_note">
+              <p className="quiz_title_note font_family">
                 Ответьте на три вопроса и мы вышлем каталог с самыми подходящими
                 для вас моделями
               </p>
@@ -92,7 +91,7 @@ const Quiz = () => {
               <div className="quiz_sep"></div>
               <div className="quiz_btn_group">
                 <div className="quiz_question_counter">
-                  <span>{questionNumber}</span>
+                  <span className="font_family">{questionNumber}</span>
                   <span> из </span>
                   <span>3</span>
                 </div>

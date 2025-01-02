@@ -1,9 +1,6 @@
 #root {
   max-width: 1920px;
   margin: 0 auto;
-  /* padding: 2rem; */
-  /* text-align: center; */
-
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -20,4 +17,13 @@ button:active {
   max-width: var(--max-width-wrapper);
   width: 95%;
   height: 100%;
+}
+.font_family {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 140%;
+}
+.color_text {
+  color: var(--text);
 }

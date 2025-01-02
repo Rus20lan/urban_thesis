@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { ITeam } from "../../interface/ITeam";
-import "./style.css";
+import { FC } from 'react';
+import { ITeam } from '../../interface/ITeam';
+import './style.css';
 
 type Props = {
   team: ITeam;
@@ -14,7 +14,7 @@ const TeamCard: FC<Props> = ({ team }) => {
         <img src={imgUrl} />
       </div>
       <h3 className="team_name">{name}</h3>
-      <p className="team_role">{role}</p>
+      <p className="font_family">{role}</p>
     </div>
   );
 };

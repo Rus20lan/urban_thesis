@@ -1,6 +1,6 @@
 export interface ISneaker {
   id: number;
-  vendorCode: string;
+  vendorСode: string;
   inStock: number;
   title: string;
   description: string;

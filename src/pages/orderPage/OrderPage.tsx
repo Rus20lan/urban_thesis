@@ -4,19 +4,34 @@ import ItemCard from '../../components/itemCard/ItemCard';
 import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
 import './style.css';
 import { IFormData } from '../../interface/IFormData';
-import { getOrderCount, postOrder } from '../../redux/order/orderSlice';
+import {
+  getOrderCount,
+  postOrder,
+  resetIsOrderPosted,
+} from '../../redux/order/orderSlice';
+import Modal from '../../components/modal';
+import InfoModal from '../../components/infoModal/InfoModal';
 
 const OrderPage: FC<IFormData> = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalActive, setModalActive] = useState(false);
+  const [message, setMessage] = useState('');
   const dispatch = useAppDispatch();
-  const { goods, count, orderAmount, numberOrder } = useAppSelector(
-    (state) => state.order
-  );
+  const { goods, count, orderAmount, numberOrder, isOrderPosted } =
+    useAppSelector((state) => state.order);
   const [dataForm, setDataForm] = useState<IFormData>({
     name: '',
     phone: '',
     email: '',
   });
+
+  const handleModalOpen = () => {
+    setModalActive(true);
+    dispatch(resetIsOrderPosted());
+  };
+  const handleModalClose = () => {
+    setModalActive(false);
+  };
 
   useEffect(() => {
     dispatch(getOrderCount());
@@ -27,15 +42,17 @@ const OrderPage: FC<IFormData> = () => {
   };
 
   useEffect(() => {
-    if (dataForm.name) {
+    if (dataForm.name && goods.length !== 0) {
       dispatch(postOrder({ goods, count, orderAmount, dataForm }));
-      // setDataForm({
-      //   name: '',
-      //   phone: '',
-      //   email: '',
-      // });
     }
   }, [dataForm]);
+
+  useEffect(() => {
+    if (isOrderPosted) {
+      setMessage('Спасибо! Заказ успешно оформлен');
+      handleModalOpen();
+    }
+  }, [isOrderPosted]);
 
   return (
     <div className="item_area order_area">
@@ -54,10 +71,11 @@ const OrderPage: FC<IFormData> = () => {
           </p>
           <div className="order_info_list_div">
             <a
-              className={`order_info_list ${
+              className={`font_family color_text ${
                 isOpen ? 'close_order' : 'open_order'
               }`}
               onClick={handleClick}
+              style={{ textDecoration: 'none', cursor: 'pointer' }}
             >
               Состав заказа
             </a>
@@ -94,6 +112,11 @@ const OrderPage: FC<IFormData> = () => {
           />
         </div>
       </div>
+      {isModalActive && (
+        <Modal onClose={handleModalClose}>
+          <InfoModal message={message}></InfoModal>
+        </Modal>
+      )}
     </div>
   );
 };

@@ -46,13 +46,11 @@
   text-align: center;
   color: #fff;
 }
-.insta_info {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 1rem;
+.insta_feedback_form_intro p {
   text-align: center;
   color: #fff;
 }
+
 .insta_logo {
   display: flex;
   justify-content: center;

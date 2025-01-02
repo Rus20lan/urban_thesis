@@ -103,7 +103,10 @@ const QuizQuestion: FC<Props> = ({ questionNumber }) => {
       children = (
         <div>
           <h3>Уточните какие-либо моменты</h3>
-          <textarea placeholder="Введите сообщение"></textarea>
+          <textarea
+            placeholder="Введите сообщение"
+            className="font_family"
+          ></textarea>
         </div>
       );
       break;

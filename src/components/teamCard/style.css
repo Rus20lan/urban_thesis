@@ -22,11 +22,8 @@
   font-size: 1.5rem;
   color: #fff;
 }
-.team_role {
+.team_card_wrapper p {
   margin: 0;
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 1rem;
   color: #fff;
 }
 
@@ -34,29 +31,23 @@
   .team_name {
     font-size: 1.2rem;
   }
-  .team_role {
+  .team_card_wrapper p {
     font-size: 0.9rem;
   }
 }
 @media (max-width: 710px) {
-  /* .team_img_wrapper {
-    height: 80%;
-  } */
   .team_name {
     font-size: 1rem;
   }
-  .team_role {
+  .team_card_wrapper p {
     font-size: 0.8rem;
   }
 }
 @media (max-width: 597px) {
-  /* .team_img_wrapper {
-    height: 75%;
-  } */
   .team_name {
     font-size: 0.8rem;
   }
-  .team_role {
+  .team_card_wrapper p {
     font-size: 0.5rem;
   }
 }

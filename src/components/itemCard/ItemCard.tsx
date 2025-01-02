@@ -40,7 +40,6 @@ const ItemCard: FC<Props> = ({ sneaker, isLarge, isLittle }) => {
   };
 
   const handleClickWasteBtn = () => {
-    // здесь отправить диспатчь для удаления товара из хранилища
     dispatch(removeGoods(sneaker));
   };
 
@@ -63,7 +62,7 @@ const ItemCard: FC<Props> = ({ sneaker, isLarge, isLittle }) => {
           ></div>
         </div>
         <div className="card_info_wrapper">
-          <p className="card_title">
+          <p className="font_family color_text">
             {addStringGender(sneaker.gender, sneaker.title)}
           </p>
           <p className="card_price">

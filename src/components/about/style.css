@@ -34,7 +34,7 @@
 .cite {
   font-family: var(--third-family);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #fff;
 }
 
@@ -48,19 +48,12 @@
 .about_text_wrapper p {
   margin: 0;
   margin-top: 20px;
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 140%;
   color: #fff;
 }
 .img2_wrapper {
   margin-left: 7%;
   clip-path: polygon(5% 100%, 25% 0%, 100% 0%, 80% 100%, 5% 100%);
   position: relative;
-  /* position: absolute;
-  z-index: 0;
-  grid-column: 3/4; */
 }
 .img2_wrapper img {
   max-width: 100%;

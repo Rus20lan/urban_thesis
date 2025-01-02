@@ -71,10 +71,6 @@
   width: 82%;
   margin-top: 20px;
   margin-bottom: 40px;
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 140%;
 }
 .label {
   max-width: 980px;
@@ -108,7 +104,6 @@
   }
   .intro p {
     width: 82%;
-
     font-size: 0.8rem;
   }
 }

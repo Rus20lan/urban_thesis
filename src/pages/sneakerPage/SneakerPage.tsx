@@ -11,7 +11,7 @@ import { addGoods } from '../../redux/order/orderSlice';
 
 const initialSneaker: ISneaker = {
   id: 0,
-  vendorCode: '',
+  vendorСode: '',
   inStock: 0,
   title: '',
   description: '',
@@ -68,7 +68,6 @@ const SneakerPage = () => {
   const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value;
     setIsActive(+value);
-    // setSneaker({ ...sneaker, sizes: [+value] });
   };
 
   useEffect(() => {
@@ -115,14 +114,12 @@ const SneakerPage = () => {
           <div className="sneaker_detail_info_wrapper">
             <div className="sneaker_vendor_stock_wrapper">
               <p className="vendor_stock_p">
-                <span className="vendor_stock_span_title">Артикул </span>
-                <span className="vendor_stock_span_value">
-                  {sneaker.vendorCode ? sneaker.vendorCode : 'Нет'}
-                </span>
+                <span className="font_family">Артикул </span>
+                <span className="font_family">{sneaker.vendorСode}</span>
               </p>
               <p className="vendor_stock_p">
-                <span className="vendor_stock_span_title">В наличии: </span>
-                <span className="vendor_stock_span_value">
+                <span className="font_family">В наличии: </span>
+                <span className="font_family">
                   {sneaker.inStock ? sneaker.inStock : 'Нет данных'}
                 </span>
               </p>
@@ -132,14 +129,14 @@ const SneakerPage = () => {
             </h2>
             <div className="stars_wrapper">{stars}</div>
             <div className="sneaker_choosing_size">
-              <h3>Выберите размер</h3>
+              <h3 className="font_family color_text">Выберите размер</h3>
               <div className="sneaker_choosing_size_wrapper">{choiceSize}</div>
             </div>
             <div className="sneaker_price_wrapper">
               <p className="sneaker_new_price">
                 {sneaker.price.toLocaleString('ru-RU')}
               </p>
-              <p className="sneaker_old_price">
+              <p className="font_family" style={{ color: 'var(--gray)' }}>
                 {sneaker.oldPrice.toLocaleString('ru-RU')}
               </p>
             </div>
@@ -168,17 +165,17 @@ const SneakerPage = () => {
         <div className="sneaker_description_wrapper">
           <div>
             <h3 className="sneaker_desctiption_title">Описание</h3>
-            <p className="sneaker_desctiption_des offset_desctiption ">
+            <p className="font_family color_text offset_desctiption ">
               {sneaker.description}
             </p>
           </div>
           <div className="sneaker_spec_container">
             <h3 className="sneaker_desctiption_title">Характеристики</h3>
             <div className="sneaker_spec_wrapper">
-              <p className="sneaker_desctiption_des">{`Пол: ${sneaker.gender}`}</p>
-              <p className="sneaker_desctiption_des">{`Цвета: ${sneaker.color}`}</p>
-              <p className="sneaker_desctiption_des">{`Состав: ${sneaker.compound}`}</p>
-              <p className="sneaker_desctiption_des">{`Страна: ${sneaker.country}`}</p>
+              <p className="font_family color_text">{`Пол: ${sneaker.gender}`}</p>
+              <p className="font_family color_text">{`Цвета: ${sneaker.color}`}</p>
+              <p className="font_family color_text">{`Состав: ${sneaker.compound}`}</p>
+              <p className="font_family color_text">{`Страна: ${sneaker.country}`}</p>
             </div>
           </div>
         </div>

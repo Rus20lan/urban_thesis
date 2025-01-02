@@ -5,7 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { IFormData } from '../../interface/IFormData';
 
 type Props = {
-  setDataForm: React.Dispatch<React.SetStateAction<IFormData>>;
+  setDataForm?: React.Dispatch<React.SetStateAction<IFormData>>;
   style?: React.CSSProperties;
   btnProps: {
     text: string;
@@ -34,11 +34,12 @@ const FeedbackForm: FC<Props> = ({
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    setDataForm(data);
-    console.log(data);
+    setDataForm?.(data);
+    reset();
   };
 
   return (

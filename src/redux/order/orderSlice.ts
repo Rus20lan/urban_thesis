@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ISneaker } from '../../interface/ISneaker';
-import { IFormData } from '../../interface/IFormData';
 import { MokkyDev } from '../../services/MokkyDev';
 
 const mokkyDev = new MokkyDev();
@@ -21,6 +20,7 @@ interface OrderState {
   goods: ISneaker[];
   count: number;
   orderAmount: number;
+  isOrderPosted: boolean;
 }
 
 const initialState: OrderState = {
@@ -33,12 +33,16 @@ const initialState: OrderState = {
   goods: [],
   count: 0,
   orderAmount: 0,
+  isOrderPosted: false,
 };
 
 export const orderSlice = createSlice({
   name: 'order',
   initialState,
   reducers: {
+    resetIsOrderPosted: (state) => {
+      state.isOrderPosted = false;
+    },
     addGoods: (state, { payload }: PayloadAction<ISneaker>) => {
       state.goods = [...state.goods, payload];
       state.count = state.goods.length;
@@ -46,8 +50,10 @@ export const orderSlice = createSlice({
     },
 
     removeGoods: (state, { payload }: PayloadAction<ISneaker>) => {
-      state.orderAmount = state.orderAmount - payload.price;
       state.goods = state.goods.filter((sneaker) => sneaker.id !== payload.id);
+      state.orderAmount = state.goods
+        .map((item) => item.price)
+        .reduce((acc, cur) => acc + cur, 0);
       state.count = state.goods.length;
     },
   },
@@ -61,6 +67,10 @@ export const orderSlice = createSlice({
         email: '',
         phone: '',
       };
+      state.isOrderPosted = true;
+    });
+    builder.addCase(postOrder.rejected, (state) => {
+      state.isOrderPosted = false;
     });
     builder.addCase(
       getOrderCount.fulfilled,
@@ -71,6 +81,6 @@ export const orderSlice = createSlice({
   },
 });
 
-export const { addGoods, removeGoods } = orderSlice.actions;
+export const { addGoods, removeGoods, resetIsOrderPosted } = orderSlice.actions;
 
 export default orderSlice.reducer;
