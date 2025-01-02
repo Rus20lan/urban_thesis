@@ -1,7 +1,12 @@
 import { HashLink } from 'react-router-hash-link';
-
 import './style.css';
-const Nav = () => {
+import { FC } from 'react';
+
+type Props = {
+  handleClick?: () => void;
+};
+
+const Nav: FC<Props> = ({ handleClick }) => {
   const links = [
     { name: 'Каталог', anchor: '#catalog' },
     { name: 'О нас', anchor: '#about' },
@@ -11,11 +16,19 @@ const Nav = () => {
     { name: 'Контакты', anchor: '#contacts' },
   ];
 
+  const handleClickNav = () => {
+    if (handleClick) {
+      handleClick();
+    }
+  };
+
   return (
     <ul className="nav_links_group">
       {links.map((link, i) => (
         <li className="nav_link" key={i}>
-          <HashLink to={`/${link.anchor}`}>{link.name}</HashLink>
+          <HashLink to={`/${link.anchor}`} onClick={handleClickNav}>
+            {link.name}
+          </HashLink>
         </li>
       ))}
     </ul>
