@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { IFormData } from '../interface/IFormData';
 
 export class MokkyDev {
   _apiBase = 'https://c7ab12de49ec742d.mokky.dev';
@@ -85,5 +84,6 @@ export class MokkyDev {
 
   postOrder = async (payload: any) => {
     const res = await axios.post(this._apiBase + '/orders', payload);
+    console.log(res.data);
   };
 }

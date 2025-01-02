@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import FeedbackForm from '../../components/feedbackForm/FeedbackForm';
 import ItemCard from '../../components/itemCard/ItemCard';
 import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
@@ -12,7 +12,7 @@ import {
 import Modal from '../../components/modal';
 import InfoModal from '../../components/infoModal/InfoModal';
 
-const OrderPage: FC<IFormData> = () => {
+const OrderPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalActive, setModalActive] = useState(false);
   const [message, setMessage] = useState('');
