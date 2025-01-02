@@ -32,9 +32,7 @@ const OrderModal: FC<Props> = () => {
         <div className="total_order_wrapper">
           <div>
             <p className="total_order_title">Итого:</p>
-            <p className="total_order_value">
-              {orderAmount.toLocaleString('ru-RU')}
-            </p>
+            <p className="total_order_value">{orderAmount}</p>
           </div>
           <div className="total_order_btn">
             <Btn

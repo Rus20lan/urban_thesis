@@ -66,8 +66,7 @@ const OrderPage = () => {
             Товаров в заказе: <strong>{count} шт</strong>
           </p>
           <p className="order_info_title">
-            Общая сумма заказа:{' '}
-            <strong>{orderAmount.toLocaleString('ru-RU')} р</strong>
+            Общая сумма заказа: <strong>{orderAmount} р</strong>
           </p>
           <div className="order_info_list_div">
             <a
