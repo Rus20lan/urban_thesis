@@ -107,12 +107,12 @@ const Quiz = () => {
                   text="Следующий шаг"
                   style={{
                     border: '1px solid var(--text)',
-                    borderRadius: '4px',
-                    padding: '12px 41px',
+                    padding: '12px 37px',
                     width: '211px',
                     height: '50px',
                     background: 'rgba(196, 196, 196, 0)',
                     color: 'var(--text)',
+                    textAlign: 'center',
                     fontFamily: 'var(--second-family)',
                   }}
                 />

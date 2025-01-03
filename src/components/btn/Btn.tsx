@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import './style.css';
+import styled from 'styled-components';
 
 type Props = {
   text: string;
@@ -8,6 +8,13 @@ type Props = {
   isDisable?: boolean;
   btnClose?: boolean;
 };
+
+const BtnButtton = styled.button`
+  border-radius: 4px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 1rem;
+`;
 
 const Btn: FC<Props> = ({ text, style, handleClick, isDisable, btnClose }) => {
   const onClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -19,13 +26,13 @@ const Btn: FC<Props> = ({ text, style, handleClick, isDisable, btnClose }) => {
     style.opacity = '0';
   }
   return (
-    <button
+    <BtnButtton
       onClick={onClick}
-      className={btnClose ? 'btnClose' : ''}
+      className={` ${btnClose ? 'btnClose' : ''}`}
       style={style ? style : {}}
     >
       {text}
-    </button>
+    </BtnButtton>
   );
 };
 

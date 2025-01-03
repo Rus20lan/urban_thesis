@@ -51,9 +51,11 @@ const Header = () => {
               width: '250px',
               height: '60px',
               background: 'var(--accent)',
+              borderRadius: '4px',
               padding: '18px 46px',
               color: '#fff',
               textDecoration: 'none',
+              fontFamily: 'var(--second-family)',
             }}
           >
             Перейти к покупкам

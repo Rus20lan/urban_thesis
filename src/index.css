@@ -1,9 +1,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 @import '@coreui/coreui/dist/css/coreui.min.css';
 @import url('./fonts/fonts.css');
-* {
-  /* outline: 5px solid green; */
-}
+
 :root {
   --max-width-wrapper: 1180px;
 
