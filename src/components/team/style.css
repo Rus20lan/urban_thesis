@@ -23,13 +23,6 @@
   height: auto;
   padding-bottom: 60px;
 }
-.team_title {
-  margin: 0;
-  font-family: var(--third-family);
-  font-weight: 700;
-  font-size: 30px;
-  color: #fff;
-}
 .team_cards_wrapper {
   margin-top: 40px;
   display: grid;

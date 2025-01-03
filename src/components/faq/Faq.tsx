@@ -1,11 +1,15 @@
 import { Accordion } from '../accordion/Accordion';
+import ContentTitle from '../contentTitle/ContentTitle';
 import './style.css';
 
 const Faq = () => {
   return (
     <div className="faq_area">
       <div className="faq_container">
-        <h2 className="content_title">Часто задаваемые вопросы</h2>
+        <ContentTitle
+          text={'Часто задаваемые вопросы'}
+          color={{ color: 'var(--text)' }}
+        />
         <div className="accordion_wrapper">
           <Accordion />
         </div>

@@ -6,6 +6,7 @@ import { useAppSelector } from '../../redux/store/hooks';
 import FeedbackForm from '../feedbackForm/FeedbackForm';
 import Modal from '../modal';
 import InfoModal from '../infoModal/InfoModal';
+import ContentTitle from '../contentTitle/ContentTitle';
 
 export type TSurvey = {
   firstAnswer: string[];
@@ -43,7 +44,10 @@ const Quiz = () => {
         <div className="quiz_card">
           {questionNumber < 4 ? (
             <>
-              <h2 className="quiz_title">Мы подберем идеальную пару для вас</h2>
+              <ContentTitle
+                text={'Мы подберем идеальную пару для вас'}
+                color={{ color: 'var(--text)' }}
+              />
               <p className="quiz_title_note font_family">
                 Ответьте на три вопроса и мы вышлем каталог с самыми подходящими
                 для вас моделями
@@ -51,7 +55,10 @@ const Quiz = () => {
             </>
           ) : (
             <>
-              <h2 className="quiz_title">Ваша подборка готова!</h2>
+              <ContentTitle
+                text={'Ваша подборка готова!'}
+                color={{ color: 'var(--text)' }}
+              />
               <p className="quiz_title_note_small">
                 Оставьте свои контактные данные, чтобы бы мы могли отправить
                 подготовленный для вас каталог

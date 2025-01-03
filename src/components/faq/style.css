@@ -13,8 +13,6 @@
   display: flex;
   max-width: 880px;
   width: 100%;
-  /* width: 85%; */
-  /* justify-content: center; */
 }
 .accordion {
   display: flex;
@@ -41,7 +39,6 @@
   padding-top: 9px;
 }
 .accordion-flush > .accordion-item {
-  /* border: 1px solid #242424; */
   border-bottom: 1px solid #242424;
 }
 .accordion-flush > .accordion-item:first-child {

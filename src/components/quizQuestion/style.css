@@ -25,12 +25,12 @@
 }
 .quiz_var_1_img_wrapper {
   width: 100%;
-  height: 78%;
+  height: 120px;
 }
 .quiz_var_1_img_wrapper img {
   object-fit: fill;
   width: 100%;
-  height: 120px;
+  height: 100%;
 }
 .quiz_question_var_2 {
   margin-top: 40px;
@@ -68,6 +68,9 @@
     width: 100%;
     box-sizing: border-box;
   }
+  .quiz_var_1_img_wrapper {
+    height: 110px;
+  }
 }
 @media (max-width: 684px) {
   .quiz_question_var_1 {
@@ -77,6 +80,9 @@
     grid-template-rows: repeat(3, 1fr);
     row-gap: 10px;
     column-gap: 10px;
+  }
+  .quiz_var_1_img_wrapper {
+    height: 100px;
   }
   .quiz_question_size_wrapper {
     gap: 1%;

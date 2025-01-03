@@ -7,6 +7,7 @@ import insta from '../../images/insta.svg';
 import RoundBtn from '../RoundBtn/RoundBtn';
 import { useResize } from '../../hooks/useResize';
 import { useRef, useState } from 'react';
+import ContentTitle from '../contentTitle/ContentTitle';
 
 const Contacts = () => {
   const [isShowToolTip, setIsShowToolTip] = useState(false);
@@ -30,14 +31,12 @@ const Contacts = () => {
             качестве обслуживания и товара просьба задавать в отдел продаж
           </p>
         )}
-        {/* <p className="tooltip_item speech">
-          Адрес и телефон для корреспонденции, инвесторов. Вопросы о доставке,
-          качестве обслуживания и товара просьба задавать в отдел продаж
-        </p> */}
         <div className="contacts_info_wrapper">
-          <h2 id="contacts" className="content_title">
-            Контакты
-          </h2>
+          <ContentTitle
+            text={'Контакты'}
+            color={{ color: 'var(--text)' }}
+            id="contacts"
+          />
           <div className="contacts_wrapper">
             <p className="contacts_title mp_10">Главный офис</p>
             <div className="contacts_wrapper_div" ref={badgeRef}>

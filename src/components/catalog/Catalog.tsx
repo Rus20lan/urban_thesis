@@ -2,12 +2,31 @@ import { useEffect, useState } from 'react';
 import Btn from '../btn/Btn';
 import FilterForm from '../filterForm/FilterForm';
 import SneakersCards from '../sneakersCards/SneakersCards';
-import './style.css';
 import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
 import {
   getSneakers,
   getSneakersByFilter,
 } from '../../redux/sneakers/sneakersSlice';
+import styled from 'styled-components';
+import ContentTitle from '../contentTitle/ContentTitle';
+
+const CatalogArea = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 60px 0;
+`;
+const CatalogContainer = styled.div`
+  margin: 0 auto;
+  max-width: var(--max-width-wrapper);
+  width: 95%;
+  display: grid;
+  grid-template-columns: 24% 1fr;
+  gap: 20px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+`;
 
 const Catalog = () => {
   const dispatch = useAppDispatch();
@@ -43,15 +62,17 @@ const Catalog = () => {
   };
 
   return (
-    <div className="catalog_area">
-      <div className="catalog_container">
+    <CatalogArea>
+      <CatalogContainer>
         <div className="col_first">
-          <h2 id="catalog" className="content_title">
-            Каталог
-          </h2>
+          <ContentTitle
+            text={'Каталог'}
+            color={{ color: 'var(--text)' }}
+            id="catalog"
+          />
           <FilterForm setPage={setPage} setLoading={setLoading} />
         </div>
-        <div className="col_second">
+        <div style={{ marginTop: '85px' }}>
           {items.length === 0 && (
             <p className="total_order_value" style={{ textAlign: 'center' }}>
               Список пуст
@@ -77,8 +98,8 @@ const Catalog = () => {
             </>
           )}
         </div>
-      </div>
-    </div>
+      </CatalogContainer>
+    </CatalogArea>
   );
 };
 

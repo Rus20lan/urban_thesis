@@ -5,14 +5,11 @@
 }
 .nav_wrapper {
   padding-top: 20px;
-  /* padding-bottom: 20px; */
-
   max-width: var(--max-width-wrapper);
   width: 95%;
   max-height: 44px;
   height: 100%;
   margin: 0 auto;
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.5); */
   display: flex;
   justify-content: space-between;
 }

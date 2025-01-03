@@ -10,14 +10,6 @@
 .quiz_card {
   background: var(--sec-bg);
   padding: 3.75rem 8.48%;
-  /* margin: 60px auto; */
-}
-.quiz_title {
-  font-family: var(--third-family);
-  font-weight: 700;
-  font-size: 1.88rem;
-  color: var(--text);
-  margin: 0;
 }
 .quiz_title_note {
   color: #808080;

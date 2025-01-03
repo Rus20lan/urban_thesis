@@ -37,14 +37,6 @@
   font-size: 1.25rem;
   color: #fff;
 }
-
-.about_text_wrapper h2 {
-  margin: 0;
-  font-family: var(--third-family);
-  font-weight: 700;
-  font-size: 1.88rem;
-  color: #fff;
-}
 .about_text_wrapper p {
   margin: 0;
   margin-top: 20px;
@@ -79,5 +71,31 @@
   }
   .about_text_wrapper p {
     font-size: 0.88rem;
+  }
+}
+@media (max-width: 740px) {
+  .about_text_wrapper {
+    margin-top: 20%;
+  }
+  .img2_wrapper {
+    margin-left: 0;
+  }
+  .about_text_wrapper h2 {
+    font-size: 1.2rem;
+  }
+  .about_text_wrapper p,
+  .about_text_wrapper span {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 526px) {
+  .about_area {
+    grid-template-columns: 2.5% 0.7fr 1fr 2.5%;
+  }
+  .about_text_wrapper {
+    margin-top: 10%;
+  }
+  .about_text_wrapper p {
+    margin-top: 10px;
   }
 }

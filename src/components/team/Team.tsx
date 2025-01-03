@@ -1,9 +1,10 @@
-import "./style.css";
-import team_figure from "../../images/team_figure.svg";
-import { useAppDispatch, useAppSelector } from "../../redux/store/hooks";
-import { useEffect } from "react";
-import { getTeam } from "../../redux/team/teamSlice";
-import TeamCard from "../teamCard/TeamCard";
+import './style.css';
+import team_figure from '../../images/team_figure.svg';
+import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
+import { useEffect } from 'react';
+import { getTeam } from '../../redux/team/teamSlice';
+import TeamCard from '../teamCard/TeamCard';
+import ContentTitle from '../contentTitle/ContentTitle';
 
 const Team = () => {
   const dispatch = useAppDispatch();
@@ -19,9 +20,7 @@ const Team = () => {
         <img src={team_figure} />
       </div>
       <div className="team_content_wrapper">
-        <h2 id="team" className="team_title">
-          Наша команда
-        </h2>
+        <ContentTitle text="Наша команда" color={{ color: '#fff' }} id="team" />
         <div className="team_cards_wrapper">
           {team.map((tm, index) => (
             <TeamCard key={index} team={tm} />
