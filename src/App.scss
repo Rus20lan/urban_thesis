@@ -1,0 +1,70 @@
+@use './_vars.scss' as *;
+#root {
+  max-width: 1920px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+button {
+  border-radius: 4px;
+}
+button:active {
+  transform: scale(0.88);
+}
+.item_area {
+  width: 100%;
+}
+.item_container {
+  margin: 0 auto;
+  max-width: $max-width-wrapper;
+  width: 95%;
+  height: 100%;
+}
+.font_family {
+  font-family: $font_family;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 140%;
+}
+.color_text {
+  color: $text;
+}
+.gender_filter_input_group,
+.quiz_checkbox_wrapper,
+.quiz_question_var_2 {
+  .custom_checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+  }
+  label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid $small-text;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+  .custom_checkbox:checked + label::before {
+    background-size: contain;
+    background-image: url('./images/mark.svg');
+  }
+  @media (max-width: 684px) {
+    .custom_checkbox + label {
+      font-size: 0.88rem;
+    }
+  }
+}

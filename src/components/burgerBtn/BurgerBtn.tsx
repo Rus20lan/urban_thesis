@@ -1,6 +1,6 @@
 import { toggleBurger } from '../../redux/burger/burgerSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
-import './style.css';
+import './style.scss';
 
 const BurgerBtn = () => {
   const dispatch = useAppDispatch();

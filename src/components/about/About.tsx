@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 import group from '../../images/group44.png';
 import line6 from '../../images/line6.svg';
 import pex from '../../images/pex.png';

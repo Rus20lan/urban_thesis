@@ -1,5 +1,5 @@
 import { HashLink } from 'react-router-hash-link';
-import './style.css';
+import './style.scss';
 import { FC } from 'react';
 
 type Props = {

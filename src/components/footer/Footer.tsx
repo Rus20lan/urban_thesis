@@ -5,12 +5,12 @@ import styled from 'styled-components';
 
 const FooterArea = styled.div`
   width: 100%;
-  background: var(--text);
+  background: #444b58;
   margin: 0 auto;
 `;
 const FooterContainer = styled.div`
   margin: 0 auto;
-  max-width: var(--max-width-wrapper);
+  max-width: 1180px;
   width: 95%;
   display: flex;
   justify-content: space-between;

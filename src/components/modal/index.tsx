@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Portal, { createContainer } from '../portal';
-import './style.css';
+import './style.scss';
 
 type Props = {
   isModalOrder?: boolean;
@@ -12,13 +12,6 @@ const Modal = (props: Props) => {
   const { children, onClose, isInfoModal } = props;
   const [isMounted, setMounted] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
-
-  // const handleClose: MouseEventHandler<HTMLDivElement> = useCallback(
-  //   (e) => {
-  //     if (isMounted && e.target?.localName === 'button') onClose?.();
-  //   },
-  //   [onClose]
-  // );
 
   useEffect(() => {
     createContainer({ id: 'modal-container-id' });

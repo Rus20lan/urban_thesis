@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 import logo from '../../images/logo.svg';
 import Nav from '../nav/Nav';
 import Basket from '../basket/Bascket';
@@ -50,12 +50,12 @@ const Header = () => {
             style={{
               width: '250px',
               height: '60px',
-              background: 'var(--accent)',
+              background: '#f14f4f',
               borderRadius: '4px',
               padding: '18px 46px',
               color: '#fff',
               textDecoration: 'none',
-              fontFamily: 'var(--second-family)',
+              fontFamily: '"Intro Regular", sans-serif',
             }}
           >
             Перейти к покупкам

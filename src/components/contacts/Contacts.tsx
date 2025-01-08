@@ -1,7 +1,7 @@
 import { address } from '../../const/consts';
 import Address from '../address/Address';
 import Badge from '../badge/Badge';
-import './style.css';
+import './style.scss';
 import vk from '../../images/vk.svg';
 import insta from '../../images/insta.svg';
 import RoundBtn from '../RoundBtn/RoundBtn';

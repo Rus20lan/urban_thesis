@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import './style.css';
+import './style.scss';
 
 type Props = {
   urlImg?: string;

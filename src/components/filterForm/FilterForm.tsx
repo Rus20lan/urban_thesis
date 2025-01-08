@@ -1,5 +1,5 @@
 import Nouislider from 'nouislider-react';
-import './style.css';
+import './style.scss';
 import { FC, useEffect, useState } from 'react';
 import Btn from '../btn/Btn';
 import SizeFilterChart from '../sizeFilterChart/SizeFilterChart';
@@ -99,7 +99,7 @@ const FilterForm: FC<Props> = ({ setPage, setLoading }) => {
       <form>
         <h3 className="title_filter_form">Подбор по параметрам</h3>
         <div className="price_filter_wrapper">
-          <span>Цена, руб</span>
+          <span className="font_family color_text">Цена, руб</span>
           <div>
             <div className="nouislider_data">
               <span className="span_nouislider">{price.low}</span>
@@ -115,7 +115,7 @@ const FilterForm: FC<Props> = ({ setPage, setLoading }) => {
           </div>
         </div>
         <div className="gender_filter_wrapper">
-          <span>Пол</span>
+          <span className="font_family color_text">Пол</span>
           <div className="gender_filter_input_group">
             <input
               className="custom_checkbox"
@@ -147,7 +147,7 @@ const FilterForm: FC<Props> = ({ setPage, setLoading }) => {
               padding: '18px 48px',
               width: '100%',
               height: '60px',
-              background: 'var(--text)',
+              background: '#444b58',
               color: '#fff',
             }}
             handleClick={handleClickApply}
@@ -158,7 +158,7 @@ const FilterForm: FC<Props> = ({ setPage, setLoading }) => {
               background: 'none',
               margin: '20px auto',
               display: 'flex',
-              color: 'var(--text)',
+              color: '#444b58',
               padding: '0',
               boxSizing: 'border-box',
             }}

@@ -3,14 +3,10 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 20px;
-}
-@media (max-width: 864px) {
-  .sneakers_container {
+  @media (max-width: 864px) {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-@media (max-width: 500px) {
-  .sneakers_container {
+  @media (max-width: 500px) {
     grid-template-columns: 1fr;
   }
 }

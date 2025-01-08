@@ -6,13 +6,11 @@
   box-sizing: border-box;
   cursor: pointer;
   align-self: center;
+  img {
+    width: 23px;
+    height: 23px;
+  }
 }
 .round_btn:active {
   transform: scale(0.88);
-}
-.round_btn img {
-  /* max-width: 100%; */
-  /* height: 100%; */
-  width: 23px;
-  height: 23px;
 }

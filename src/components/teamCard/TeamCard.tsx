@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ITeam } from '../../interface/ITeam';
-import './style.css';
+import './style.scss';
 
 type Props = {
   team: ITeam;

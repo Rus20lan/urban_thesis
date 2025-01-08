@@ -1,5 +1,5 @@
 import FeedbackForm from '../feedbackForm/FeedbackForm';
-import './style.css';
+import './style.scss';
 import instagram from '../../images/instagram.png';
 import collage from '../../images/collage.png';
 
@@ -19,10 +19,10 @@ const Insta = () => {
             btnProps={{
               text: 'Отправить',
               style: {
-                background: 'var(--accent)',
+                background: '#f14f4f',
                 padding: '22px 47px',
                 borderRadius: '4px',
-                fontFamily: 'var(--second-family)',
+                fontFamily: '"Intro Regular", sans-serif',
                 fontSize: '1rem',
                 color: '#fff',
               },

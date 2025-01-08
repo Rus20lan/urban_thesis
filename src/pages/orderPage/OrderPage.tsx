@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import FeedbackForm from '../../components/feedbackForm/FeedbackForm';
 import ItemCard from '../../components/itemCard/ItemCard';
 import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
-import './style.css';
+import './style.scss';
 import { IFormData } from '../../interface/IFormData';
 import {
   getOrderCount,
@@ -71,7 +71,7 @@ const OrderPage = () => {
           <div className="order_info_list_div">
             <a
               className={`font_family color_text ${
-                isOpen ? 'close_order' : 'open_order'
+                isOpen ? 'open_order' : 'close_order'
               }`}
               onClick={handleClick}
               style={{ textDecoration: 'none', cursor: 'pointer' }}
@@ -83,9 +83,10 @@ const OrderPage = () => {
                 isOpen ? 'ul_open' : 'ul_close'
               }`}
             >
-              {goods.map((sneaker, index) => (
-                <ItemCard key={index} sneaker={sneaker} isLittle={true} />
-              ))}
+              {isOpen &&
+                goods.map((sneaker, index) => (
+                  <ItemCard key={index} sneaker={sneaker} isLittle={true} />
+                ))}
             </ul>
           </div>
         </div>
@@ -96,10 +97,10 @@ const OrderPage = () => {
               text: 'Оформить заказ',
               style: {
                 marginTop: '29px',
-                background: 'var(--accent)',
+                background: '#f14f4f',
                 padding: '18px 47px',
                 borderRadius: '4px',
-                fontFamily: 'var(--second-family)',
+                fontFamily: '"Intro Regular", sans-serif',
                 fontSize: '1rem',
                 color: '#fff',
                 width: '48%',

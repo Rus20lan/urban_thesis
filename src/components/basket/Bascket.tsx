@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 import basket from '../../images/basket.svg';
 import Badge from '../badge/Badge';
 import { useAppSelector } from '../../redux/store/hooks';
@@ -25,7 +25,7 @@ const Basket = () => {
         <Badge
           value={'' + count}
           style={{
-            backgroundColor: 'var(--accent)',
+            backgroundColor: '#f14f4f',
             position: 'absolute',
             right: '-5px',
             bottom: '-5px',

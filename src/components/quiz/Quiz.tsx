@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Btn from '../btn/Btn';
-import './style.css';
+import './style.scss';
 import QuizQuestion from '../quizQuestion/QuizQuestion';
 import { useAppSelector } from '../../redux/store/hooks';
 import FeedbackForm from '../feedbackForm/FeedbackForm';
@@ -46,7 +46,7 @@ const Quiz = () => {
             <>
               <ContentTitle
                 text={'Мы подберем идеальную пару для вас'}
-                color={{ color: 'var(--text)' }}
+                color={{ color: '#444b58' }}
               />
               <p className="quiz_title_note font_family">
                 Ответьте на три вопроса и мы вышлем каталог с самыми подходящими
@@ -57,7 +57,7 @@ const Quiz = () => {
             <>
               <ContentTitle
                 text={'Ваша подборка готова!'}
-                color={{ color: 'var(--text)' }}
+                color={{ color: '#444b58' }}
               />
               <p className="quiz_title_note_small">
                 Оставьте свои контактные данные, чтобы бы мы могли отправить
@@ -82,9 +82,9 @@ const Quiz = () => {
                     text: 'Получить',
                     style: {
                       marginTop: '10px',
-                      background: 'var(--accent)',
+                      background: '#f14f4f',
                       color: '#fff',
-                      fontFamily: 'var(--second-family)',
+                      fontFamily: '"Intro Regular", sans-serif',
                       height: '60px',
                     },
                   }}
@@ -106,14 +106,14 @@ const Quiz = () => {
                   handleClick={handleClick}
                   text="Следующий шаг"
                   style={{
-                    border: '1px solid var(--text)',
+                    border: '1px solid #444b58',
                     padding: '12px 37px',
                     width: '211px',
                     height: '50px',
                     background: 'rgba(196, 196, 196, 0)',
-                    color: 'var(--text)',
+                    color: '#444b58',
                     textAlign: 'center',
-                    fontFamily: 'var(--second-family)',
+                    fontFamily: '"Intro Regular", sans-serif',
                   }}
                 />
               </div>

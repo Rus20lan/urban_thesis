@@ -1,14 +1,15 @@
+@use '../../_vars.scss' as *;
 .quiz_area {
   width: 100%;
   height: auto;
 }
 .quiz_container {
-  max-width: var(--max-width-wrapper);
+  max-width: $max-width-wrapper;
   width: 95%;
   margin: 60px auto;
 }
 .quiz_card {
-  background: var(--sec-bg);
+  background: $sec-bg;
   padding: 3.75rem 8.48%;
 }
 .quiz_title_note {
@@ -19,7 +20,7 @@
 .quiz_title_note_small {
   font-weight: 400;
   font-size: 1.12rem;
-  color: var(--small-text);
+  color: $small-text;
 }
 .quiz_sep {
   border-top: 1px solid #808080;
@@ -37,13 +38,13 @@
   display: flex;
   flex-direction: column;
   padding: 40px;
-  background: var(--small-text);
+  background: $small-text;
   width: 66%;
   box-sizing: border-box;
 }
 .quiz_form_title {
   margin: 0;
-  font-family: var(--third-family);
+  font-family: $third-family;
   font-weight: 700;
   font-size: 2.25rem;
   line-height: 140%;
@@ -51,7 +52,7 @@
 }
 .quiz_form_wrapper p {
   margin: 0;
-  font-family: var(--font-family);
+  font-family: $font_family;
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 140%;

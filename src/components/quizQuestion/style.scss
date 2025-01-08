@@ -1,0 +1,113 @@
+@use '../../_vars.scss' as *;
+.quiz_question_container {
+  height: auto;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  h3 {
+    margin: 0;
+    font-family: $font_family;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $text;
+  }
+  textarea {
+    resize: none;
+    height: 246px;
+    width: 465px;
+    margin-top: 20px;
+    margin-bottom: 122px;
+    padding: 20px;
+    color: $small-text;
+    border: none;
+  }
+  @media (max-width: 980px) {
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.quiz_checkbox_wrapper {
+  margin-top: 10px;
+}
+.quiz_question_var_1 {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 20px;
+  column-gap: 7%;
+  height: auto;
+
+  @media (max-width: 684px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+  @media (max-width: 684px) {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    .quiz_var_1_img_wrapper {
+      height: 100px;
+    }
+    .quiz_question_size_wrapper {
+      gap: 1%;
+    }
+    .custom_checkbox + label {
+      font-size: 0.88rem;
+    }
+  }
+}
+.quiz_var_1_img_wrapper {
+  width: 100%;
+  height: 120px;
+  img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 980px) {
+    height: 110px;
+  }
+  @media (max-width: 684px) {
+    height: 100px;
+    .quiz_question_size_wrapper {
+      gap: 1%;
+    }
+    .custom_checkbox + label {
+      font-size: 0.88rem;
+    }
+  }
+}
+
+.quiz_question_var_2 {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 7%;
+}
+.quiz_question_size_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 7%;
+  @media (max-width: 684px) {
+    gap: 1%;
+  }
+}
+.quiz_var_2_img_wrapper {
+  margin-top: 20px;
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}

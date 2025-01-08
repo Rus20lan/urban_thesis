@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import './style.css';
+import './style.scss';
 import Btn from '../btn/Btn';
 type Props = {
   message: string;
@@ -20,7 +20,7 @@ const InfoModal: FC<Props> = ({ message }) => {
                 borderRadius: '4px',
                 width: '100px',
                 height: '100%',
-                background: 'var(--accent)',
+                background: '#f14f4f',
                 color: '#fff',
               }}
             />

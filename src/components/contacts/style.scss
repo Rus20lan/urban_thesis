@@ -1,16 +1,23 @@
+@use '../../_vars.scss' as *;
 .contacts_area {
   width: 100%;
   background-color: #f3f6f6;
 }
 .contacts_container {
   margin: 0 auto;
-  max-width: var(--max-width-wrapper);
+  max-width: $max-width-wrapper;
   width: 95%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding-top: 60px;
   padding-bottom: 60px;
   position: relative;
+  @media (max-width: 762px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 .contacts_info_wrapper {
   display: flex;
@@ -20,6 +27,9 @@
   margin-top: 60px;
   display: flex;
   align-items: center;
+  @media (max-width: 762px) {
+    margin-top: 20px;
+  }
 }
 .mp_10 {
   margin-right: 10px;
@@ -38,19 +48,23 @@ p {
   margin: 0;
 }
 .contacts_title {
-  font-family: var(--font-family);
+  font-family: $font_family;
   font-weight: 400;
   font-size: 0.88rem;
   line-height: 140%;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gray);
+  color: $gray;
 }
 .round_btns_wrapper {
   margin-top: 39.79px;
   display: flex;
   justify-content: flex-start;
   gap: 20px;
+  @media (max-width: 762px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 .contacts_wrapper_div {
   position: relative;
@@ -60,17 +74,26 @@ p {
   top: 60px;
   left: 124px;
   width: 467px;
-  font-family: var(--font-family);
+  font-family: $font_family;
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
-  color: var(--text);
+  color: $text;
   padding: 10px 20px;
   box-shadow: 4px 8px 20px 0 rgba(0, 13, 84, 0.2);
   z-index: 100;
   box-sizing: border-box;
   border-radius: 4px;
   background: #fff;
+  @media (max-width: 762px) {
+    top: 0px;
+    width: 400px;
+  }
+  @media (max-width: 590px) {
+    left: 1px;
+    top: -15px;
+    width: 350px;
+  }
 }
 
 .tooltip_item:after {
@@ -86,34 +109,7 @@ p {
   border: 15px solid;
   border-radius: 4px;
   border-color: #fff transparent transparent transparent;
-}
-
-@media (max-width: 762px) {
-  .contacts_container {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  .contacts_wrapper {
-    margin-top: 20px;
-  }
-  .round_btns_wrapper {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  .tooltip_item {
-    top: 0px;
-    width: 400px;
-  }
-}
-@media (max-width: 590px) {
-  .tooltip_item {
-    left: 1px;
-    top: -15px;
-    width: 350px;
-  }
-  .speech:after {
+  @media (max-width: 590px) {
     left: 133px;
     bottom: -25px;
   }

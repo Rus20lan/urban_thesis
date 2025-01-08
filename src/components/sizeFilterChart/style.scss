@@ -1,3 +1,4 @@
+@use '../../_vars.scss' as *;
 .size_filter_wrapper {
   margin-top: 20px;
   display: flex;
@@ -11,13 +12,13 @@
   height: 100%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  border-top: 1px solid var(--small-text);
-  border-left: 1px solid var(--small-text);
+  border-top: 1px solid $small-text;
+  border-left: 1px solid $small-text;
   gap: 1px;
 }
 .size_filter_chart div {
-  border-bottom: 1px solid var(--small-text);
-  border-right: 1px solid var(--small-text);
+  border-bottom: 1px solid $small-text;
+  border-right: 1px solid $small-text;
 }
 [id^='size-'] {
   display: none;
@@ -30,16 +31,16 @@
   vertical-align: middle;
   text-transform: uppercase;
   text-align: center;
-  font-family: var(--font-family);
+  font-family: $font_family;
   font-weight: 400;
   font-size: 16px;
   text-align: center;
-  color: var(--text);
+  color: $text;
   cursor: pointer;
 }
 input[type='checkbox']:ckecked {
-  background-color: var(--bg);
+  background-color: $bg;
 }
 .active {
-  background: var(--gray);
+  background: $gray;
 }

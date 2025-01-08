@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 import { questionOne, questionTwo } from '../../const/consts';
 import { FC } from 'react';
 import sneaker from '../../images/sneaker.webp';
@@ -62,7 +62,9 @@ const QuizQuestion: FC<Props> = ({ questionNumber }) => {
                       handleChange(e);
                     }}
                   />
-                  <label htmlFor={`sneak_${sneak.id}`}>{sneak.name}</label>
+                  <label htmlFor={`sneak_${sneak.id}`} className="font_family">
+                    {sneak.name}
+                  </label>
                 </div>
               </div>
             ))}
@@ -88,7 +90,9 @@ const QuizQuestion: FC<Props> = ({ questionNumber }) => {
                       handleChange(e);
                     }}
                   />
-                  <label htmlFor={`size_${index}`}>{size}</label>
+                  <label htmlFor={`size_${index}`} className="font_family">
+                    {size}
+                  </label>
                 </div>
               ))}
             </div>

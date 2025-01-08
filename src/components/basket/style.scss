@@ -1,0 +1,25 @@
+@use '../../_vars.scss' as *;
+.basket_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 24px;
+  z-index: 110;
+  cursor: pointer;
+
+  span {
+    font-family: $font_family;
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+    margin-right: 10px;
+    align-self: center;
+  }
+  a {
+    position: relative;
+    img {
+      display: block;
+      align-self: flex-end;
+    }
+  }
+}

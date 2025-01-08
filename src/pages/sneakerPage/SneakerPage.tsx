@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import './style.css';
+import './style.scss';
 import { useParams } from 'react-router-dom';
 import { ISneaker } from '../../interface/ISneaker';
 import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';

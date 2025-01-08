@@ -29,7 +29,7 @@ interface SneakersState {
     remaining_count: number;
   };
   items: [];
-  isLoading: boolean;
+  loading: boolean;
   isError: boolean;
   errorMessage: string;
 }
@@ -43,7 +43,7 @@ const initialState: SneakersState = {
     per_page: 0,
     remaining_count: 0,
   },
-  isLoading: false,
+  loading: false,
   isError: false,
   errorMessage: '',
 };
@@ -58,7 +58,7 @@ const sneakersSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getSneakers.pending, (state) => {
-      state.isLoading = true;
+      state.loading = true;
       state.isError = false;
     });
     builder.addCase(
@@ -72,18 +72,18 @@ const sneakersSlice = createSlice({
         state.meta.total_items = meta.total_items;
         state.meta.total_pages = meta.total_pages;
         state.isError = false;
-        state.isLoading = false;
+        state.loading = false;
       }
     );
     builder.addCase(getSneakers.rejected, (state) => {
       state.isError = true;
-      state.isLoading = false;
+      state.loading = false;
       state.errorMessage =
         'Alas and ah, there is an error on the server side. try again later';
     });
 
     builder.addCase(getSneakersByFilter.pending, (state) => {
-      state.isLoading = true;
+      state.loading = true;
       state.isError = false;
     });
     builder.addCase(
@@ -97,12 +97,12 @@ const sneakersSlice = createSlice({
         state.meta.total_items = meta.total_items;
         state.meta.total_pages = meta.total_pages;
         state.isError = false;
-        state.isLoading = false;
+        state.loading = false;
       }
     );
     builder.addCase(getSneakersByFilter.rejected, (state) => {
       state.isError = true;
-      state.isLoading = false;
+      state.loading = false;
       state.errorMessage =
         'Alas and ah, there is an error on the server side. try again later';
     });

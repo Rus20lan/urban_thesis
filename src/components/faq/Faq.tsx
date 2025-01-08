@@ -1,6 +1,6 @@
 import { Accordion } from '../accordion/Accordion';
 import ContentTitle from '../contentTitle/ContentTitle';
-import './style.css';
+import './style.scss';
 
 const Faq = () => {
   return (

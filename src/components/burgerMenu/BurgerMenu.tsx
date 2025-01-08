@@ -10,7 +10,7 @@ const MenuWrapper = styled.div`
   left: 0;
   padding-top: 65px;
   padding-bottom: 20px;
-  background: var(--gray);
+  background: #b2b5bb;
   border-radius: 0 0 10px 10px;
   box-sizing: border-box;
   z-index: 102;

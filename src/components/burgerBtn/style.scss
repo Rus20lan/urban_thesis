@@ -9,6 +9,10 @@
   position: relative;
   top: 5px;
   right: 5px;
+  @media (max-width: 1024px) {
+    margin-left: auto;
+    margin-right: 0px;
+  }
 }
 .line {
   position: absolute;
@@ -50,10 +54,4 @@
   -webkit-transform: translateY(-7px) rotate(-45deg);
   -ms-transform: translateY(-7px) rotate(-45deg);
   transform: translateY(-7px) rotate(-45deg);
-}
-@media (max-width: 1024px) {
-  .menu {
-    margin-left: auto;
-    margin-right: 0px;
-  }
 }

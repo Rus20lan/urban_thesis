@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 import { FC, useState } from 'react';
 import RoundBtn from '../RoundBtn/RoundBtn';
 import eye from '../../images/eye.svg';
@@ -76,7 +76,7 @@ const ItemCard: FC<Props> = ({ sneaker, isLarge, isLittle }) => {
               style={{
                 maxWidth: '30%',
                 maxHeight: '25%',
-                backgroundColor: 'var(--text)',
+                backgroundColor: '#444b58',
                 padding: '10%',
               }}
               handleClick={handleClickEyeBtn}
@@ -86,7 +86,7 @@ const ItemCard: FC<Props> = ({ sneaker, isLarge, isLittle }) => {
               style={{
                 maxWidth: '30%',
                 maxHeight: '25%',
-                backgroundColor: 'var(--text)',
+                backgroundColor: '#444b58',
                 padding: '10%',
               }}
               handleClick={handleClickBasketBtn}

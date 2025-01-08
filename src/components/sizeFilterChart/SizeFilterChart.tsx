@@ -1,5 +1,5 @@
 import { sizeConst } from '../../const/consts';
-import './style.css';
+import './style.scss';
 import Size from './Size';
 import { FC } from 'react';
 

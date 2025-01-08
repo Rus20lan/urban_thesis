@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import ContentTitle from '../contentTitle/ContentTitle';
 import { useResize } from '../../hooks/useResize';
 import RoundBtn from '../RoundBtn/RoundBtn';
+import Loader from '../loader/Loader';
 
 const CatalogArea = styled.div`
   width: 100%;
@@ -48,7 +49,7 @@ const CatalogFilterWrapper = styled.div`
 const Catalog = () => {
   const dispatch = useAppDispatch();
   const { isNotEmpty, filterObj } = useAppSelector((state) => state.filter);
-  const { meta, items } = useAppSelector((state) => state.sneakers);
+  const { meta, items, loading } = useAppSelector((state) => state.sneakers);
   const { current_page, total_pages } = meta;
   const [page, setPage] = useState(current_page);
   const [isLoading, setLoading] = useState(false);
@@ -122,14 +123,14 @@ const Catalog = () => {
                     ry="3"
                     transform="rotate(90 7 7)"
                     stroke={isOpen ? '#444b58' : '#FFFFFF'}
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                   />
                   <path
                     d="M9.5 5H18C19.1046 5 20 5.89543 20 7V7C20 8.10457 19.1046 9 18 9H9.5"
                     stroke={isOpen ? '#444b58' : '#FFFFFF'}
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                   />
                   <ellipse
                     cx="3"
@@ -138,14 +139,14 @@ const Catalog = () => {
                     ry="3"
                     transform="matrix(4.37114e-08 1 1 -4.37114e-08 14 14)"
                     stroke={isOpen ? '#444b58' : '#FFFFFF'}
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                   />
                   <path
                     d="M14.5 15H6C4.89543 15 4 15.8954 4 17V17C4 18.1046 4.89543 19 6 19H14.5"
                     stroke={isOpen ? '#444b58' : '#FFFFFF'}
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                   />
                 </svg>
               }
@@ -156,12 +157,13 @@ const Catalog = () => {
           <FilterForm setPage={setPage} setLoading={setLoading} />
         )}
         <CatalogCardsWrapper>
-          {items.length === 0 && (
+          {loading && <Loader />}
+          {!loading && items.length === 0 && (
             <p className="total_order_value" style={{ textAlign: 'center' }}>
               Список пуст
             </p>
           )}
-          {items.length !== 0 && (
+          {!loading && items.length !== 0 && (
             <>
               <SneakersCards data={items} />
               <Btn
@@ -171,7 +173,7 @@ const Catalog = () => {
                   margin: '40px auto 60px auto',
                   width: '200px',
                   height: '60px',
-                  background: 'var(--accent)',
+                  background: '#f14f4f',
                   padding: '18px 46px',
                   color: '#fff',
                 }}

@@ -11,7 +11,7 @@ type Props = {
 
 const BtnButtton = styled.button`
   border-radius: 4px;
-  font-family: var(--second-family);
+  font-family: 'Intro Regular', sans-serif;
   font-weight: 400;
   font-size: 1rem;
 `;

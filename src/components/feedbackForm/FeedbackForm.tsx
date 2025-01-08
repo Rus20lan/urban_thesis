@@ -1,6 +1,5 @@
 import { FC } from 'react';
-// import Btn from '../btn/Btn';
-import './style.css';
+import './style.scss';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { IFormData } from '../../interface/IFormData';
 
@@ -50,10 +49,7 @@ const FeedbackForm: FC<Props> = ({
         style={style && style}
       >
         {errors.name?.type === 'required' && (
-          <p
-            role="alert"
-            style={{ textAlign: 'center', color: 'var(--scarlet)' }}
-          >
+          <p role="alert" style={{ textAlign: 'center', color: '#ff2400' }}>
             Требуется указать имя
           </p>
         )}
@@ -70,10 +66,7 @@ const FeedbackForm: FC<Props> = ({
         {isEmailField && (
           <>
             {errors.email && (
-              <p
-                role="alert"
-                style={{ textAlign: 'center', color: 'var(--scarlet)' }}
-              >
+              <p role="alert" style={{ textAlign: 'center', color: '#ff2400' }}>
                 {errors.email.message}{' '}
               </p>
             )}
@@ -92,10 +85,7 @@ const FeedbackForm: FC<Props> = ({
         {isPhoneField && (
           <>
             {errors.phone && (
-              <p
-                role="alert"
-                style={{ textAlign: 'center', color: 'var(--scarlet)' }}
-              >
+              <p role="alert" style={{ textAlign: 'center', color: '#ff2400' }}>
                 {errors.phone.message}{' '}
               </p>
             )}

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useAppSelector } from '../../redux/store/hooks';
 import Btn from '../btn/Btn';
 import ItemCard from '../itemCard/ItemCard';
-import './style.css';
+import './style.scss';
 import { useNavigate } from 'react-router-dom';
 
 type Props = {
@@ -41,7 +41,7 @@ const OrderModal: FC<Props> = () => {
               style={{
                 width: '100%',
                 height: '100%',
-                background: 'var(--accent)',
+                background: '#f14f4f',
                 color: '#fff',
               }}
               handleClick={() => {
@@ -74,7 +74,7 @@ const OrderModal: FC<Props> = () => {
               style={{
                 width: '100%',
                 height: '100%',
-                background: 'var(--accent)',
+                background: '#f14f4f',
                 color: '#fff',
               }}
             />

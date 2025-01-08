@@ -1,0 +1,131 @@
+@use '../../_vars.scss' as *;
+.header_area {
+  width: 100%;
+  height: auto;
+  background: $bg;
+  .nav_wrapper {
+    padding-top: 20px;
+    max-width: $max-width-wrapper;
+    width: 95%;
+    max-height: 44px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .logo_wrapper {
+      -ms-flex-item-align: start;
+      align-self: flex-start;
+      height: 24px;
+      z-index: 110;
+    }
+    .links_wrapper {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      max-width: 680px;
+      width: 100%;
+      align-items: flex-start;
+      gap: 40px;
+      position: relative;
+    }
+  }
+  .header_sep {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    height: 1px;
+    max-width: $max-width-wrapper;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .intro_wrapper {
+    margin: 100px auto 0 auto;
+    padding-bottom: 88px;
+    max-width: $max-width-wrapper;
+    width: 95%;
+    color: #fff;
+    position: relative;
+    .label {
+      max-width: 980px;
+      max-height: 200px;
+      position: absolute;
+      z-index: 0;
+      top: 83px;
+      left: 153px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .intro {
+      width: 62%;
+      z-index: 1;
+      position: relative;
+      h2 {
+        width: 95%;
+        font-family: $second-family;
+        font-weight: 400;
+        font-size: 2.25rem;
+        line-height: 140%;
+        margin: 0;
+      }
+      p {
+        width: 82%;
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+  @media (max-width: 992px) {
+    .nav_wrapper {
+      .links_wrapper {
+        width: auto;
+      }
+    }
+
+    .intro_wrapper {
+      .intro {
+        width: 62%;
+        h2 {
+          font-size: 1.8rem;
+        }
+        p {
+          width: 82%;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  @media (max-width: 810px) {
+    .intro_wrapper {
+      .intro {
+        width: 70%;
+        h2 {
+          font-size: 1.4rem;
+        }
+        p {
+          width: 82%;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  @media (max-width: 374px) {
+    .intro_wrapper {
+      .intro {
+        width: 90%;
+        h2 {
+          font-size: 1.2rem;
+        }
+        p {
+          width: 82%;
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}

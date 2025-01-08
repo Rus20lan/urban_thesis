@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Title = styled.h2`
   margin: 0;
-  font-family: var(--third-family);
+  font-family: 'Intro Bold', sans-serif;
   font-weight: 700;
   font-size: 1.88rem;
 `;

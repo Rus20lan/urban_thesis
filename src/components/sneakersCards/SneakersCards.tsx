@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { ISneaker } from '../../interface/ISneaker';
 import ItemCard from '../itemCard/ItemCard';
-import './style.css';
+import './style.scss';
 
 type Props = {
   data: ISneaker[];

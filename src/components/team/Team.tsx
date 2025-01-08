@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 import team_figure from '../../images/team_figure.svg';
 import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
 import { useEffect } from 'react';
