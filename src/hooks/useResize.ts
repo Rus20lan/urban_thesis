@@ -18,5 +18,6 @@ export const useResize = () => {
     width,
     isScreenLg: width <= ScreenBreakpoint.LG,
     isScreenXl: width <= ScreenBreakpoint.XL,
+    isScreenTb: width <= ScreenBreakpoint.TB,
   };
 };

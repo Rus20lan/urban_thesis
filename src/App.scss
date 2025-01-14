@@ -15,17 +15,14 @@ button:active {
 .item_area {
   width: 100%;
 }
-.item_container {
-  margin: 0 auto;
-  max-width: $max-width-wrapper;
-  width: 95%;
-  height: 100%;
-}
 .font_family {
   font-family: $font_family;
   font-weight: 400;
   font-size: 1rem;
   line-height: 140%;
+  @media (max-width: 810px) {
+    font-size: 0.8rem;
+  }
 }
 .color_text {
   color: $text;

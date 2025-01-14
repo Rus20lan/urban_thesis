@@ -1,6 +1,7 @@
 export enum ScreenBreakpoint {
   LG = 992,
   XL = 1024,
+  TB = 768,
 }
 
 export const questionOne = {

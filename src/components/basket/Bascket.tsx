@@ -34,7 +34,7 @@ const Basket = () => {
       </a>
       <div>
         {isModalActive && (
-          <Modal onClose={handleModalClose}>
+          <Modal onClose={handleModalClose} isModalOrder={true}>
             <OrderModal onClose={handleModalClose} />
           </Modal>
         )}

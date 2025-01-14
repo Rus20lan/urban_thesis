@@ -7,9 +7,11 @@ type Props = {
   children: React.ReactNode;
   onClose?: () => void;
   isInfoModal?: boolean;
+  isSneakerModal?: boolean;
 };
 const Modal = (props: Props) => {
-  const { children, onClose, isInfoModal } = props;
+  const { children, onClose, isInfoModal, isSneakerModal, isModalOrder } =
+    props;
   const [isMounted, setMounted] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -22,7 +24,6 @@ const Modal = (props: Props) => {
     if (isMounted) {
       document.body.style.overflow = 'hidden';
     }
-
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -34,7 +35,16 @@ const Modal = (props: Props) => {
       if (target instanceof Node && rootRef.current === target) {
         onClose?.();
       }
-      if ((event.target as Element).classList.contains('btnClose')) {
+      if (
+        (event.target as Element).classList.contains('btnClose') &&
+        (isInfoModal || isModalOrder)
+      ) {
+        onClose?.();
+      }
+      if (
+        (event.target as Element).classList.contains('btnClose') &&
+        isSneakerModal
+      ) {
         onClose?.();
       }
     };

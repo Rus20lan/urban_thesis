@@ -1,14 +1,15 @@
 import './style.scss';
-import { FC, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import RoundBtn from '../RoundBtn/RoundBtn';
 import eye from '../../images/eye.svg';
 import basket from '../../images/basket.svg';
 import { ISneaker } from '../../interface/ISneaker';
-import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../../redux/store/hooks';
+import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
 import { addGoods, removeGoods } from '../../redux/order/orderSlice';
 import { addStringGender } from '../../modules/addStringGender';
 import waste from '../../images/waste.svg';
+import Modal from '../modal';
+import SneakerPage from '../../pages/sneakerPage/SneakerPage';
 
 type Props = {
   sneaker: ISneaker;
@@ -18,9 +19,25 @@ type Props = {
 
 const ItemCard: FC<Props> = ({ sneaker, isLarge, isLittle }) => {
   const [isVisibleRoundBtn, setIsVisibleRoundBtn] = useState(false);
-  const navigate = useNavigate();
-
+  const [isModalActive, setModalActive] = useState(false);
+  const { count } = useAppSelector((state) => state.order);
+  const prevValue = useRef(0);
   const dispatch = useAppDispatch();
+  // const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   if (isModalActive && prevValue.current < count) {
+  //     setModalActive(false);
+  //     prevValue.current = count;
+  //   }
+  // }, [count]);
+
+  const handleModalClose = () => {
+    if (isModalActive && prevValue.current < count) {
+      setModalActive(false);
+      prevValue.current = count;
+    }
+  };
 
   const handleMouseMove = () => {
     if (!isVisibleRoundBtn) {
@@ -32,7 +49,8 @@ const ItemCard: FC<Props> = ({ sneaker, isLarge, isLittle }) => {
   };
 
   const handleClickEyeBtn = () => {
-    navigate(`sneaker/${sneaker.id}`);
+    // navigate(`sneaker/${sneaker.id}`);
+    setModalActive(true);
   };
 
   const handleClickBasketBtn = () => {
@@ -92,6 +110,11 @@ const ItemCard: FC<Props> = ({ sneaker, isLarge, isLittle }) => {
               handleClick={handleClickBasketBtn}
             />
           </div>
+        )}
+        {isModalActive && (
+          <Modal onClose={handleModalClose} isSneakerModal={true}>
+            <SneakerPage idSneaker={sneaker.id} />
+          </Modal>
         )}
       </div>
     );

@@ -1,30 +1,42 @@
 @use '../../_vars.scss' as *;
 .sneaker_container {
-  padding: 5% 0;
+  margin: 0 auto;
+  max-width: $max-width-wrapper;
+  width: 95%;
+  margin-top: 10%;
+  padding-top: 43px;
+  padding-left: 41px;
+  padding-bottom: 63px;
+  height: auto;
   display: grid;
   grid-template-rows: 2fr 1fr;
-  row-gap: 7%;
-  height: auto;
+  row-gap: 5%;
+  background: #fff;
+  box-shadow: 2px 4px 10px 0 rgba(0, 13, 84, 0.2);
+  box-sizing: border-box;
+  z-index: 1111;
   @media (max-width: 1200px) {
     row-gap: 1%;
+    padding: 3.7%;
+    grid-template-rows: 1fr 0.5fr;
+  }
+  @media (max-width: 545px) {
   }
 }
 .sneaker_present {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 95%;
-  @media (max-width: 1200px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  @media (max-width: 810px) {
     width: 100%;
+  }
+  @media (max-width: 545px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 326px 1fr;
   }
 }
 .sneaker_foto_wrapper {
   width: 100%;
-  padding-top: 7.7%;
-  padding-left: 7.4%;
   img {
     max-width: 100%;
     height: auto;
@@ -35,9 +47,14 @@
     display: flex;
     justify-content: center;
   }
+  @media (max-width: 810px) {
+    height: 80%;
+  }
+  @media (max-width: 545px) {
+    height: 100%;
+  }
 }
 .sneaker_detail_info_wrapper {
-  padding-top: 7%;
   padding-left: 3.9%;
   display: flex;
   flex-direction: column;
@@ -50,33 +67,38 @@
     padding-right: 3.9%;
   }
   @media (max-width: 848px) {
-    width: 95%;
     padding-left: 0;
     padding-right: 0;
   }
+  @media (max-width: 545px) {
+    max-height: 152px;
+    height: 100%;
+    overflow-y: scroll;
+  }
 }
 .sneaker_vendor_stock_wrapper {
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 5%;
+  @media (max-width: 577px) {
+    flex-direction: column;
+    height: 36px;
+    .vendor_stock_p {
+      height: auto;
+    }
+  }
 }
 .vendor_stock_p {
   display: flex;
   height: 100%;
   justify-content: flex-start;
-  width: 28%;
   gap: 10%;
   flex-wrap: nowrap;
   flex-shrink: 0;
   span {
     color: $gray;
     flex-shrink: 0;
-  }
-  @media (max-width: 1200px) {
-    flex-shrink: 1;
-    span {
-      flex-shrink: 1;
-    }
   }
 }
 .sneaker_title {
@@ -86,6 +108,9 @@
   line-height: 140%;
   color: $text;
   margin: 0;
+  @media (max-width: 810px) {
+    font-size: 1.2rem;
+  }
 }
 .stars_wrapper {
   max-width: 116px;
@@ -112,15 +137,29 @@
 .sneaker_choosing_size_wrapper {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 23px;
   div {
     border: 1px solid $gray;
     border-radius: 4px;
-    width: 70px;
+    max-width: 70px;
+    width: 100%;
     height: 32px;
   }
+  @media (max-width: 810px) {
+    gap: 5px;
+    div {
+      height: auto;
+      label {
+        font-size: 0.8rem;
+      }
+    }
+  }
   @media (max-width: 566px) {
-    gap: 5%;
+    gap: 2%;
+    div {
+      max-width: 50px;
+    }
   }
 }
 .active_size {
@@ -155,6 +194,9 @@
   font-weight: 700;
   font-size: 1.88rem;
   color: $text;
+  @media (max-width: 810px) {
+    font-size: 1.5rem;
+  }
 }
 
 .sneaker_stock_wrapper {
@@ -169,6 +211,9 @@
   vertical-align: middle;
   display: flex;
   align-items: center;
+  @media (max-width: 810px) {
+    font-size: 0.6rem;
+  }
 }
 .sneaker_stock_p:before {
   content: url('../../images/jack.svg');
@@ -179,18 +224,19 @@
 }
 .sneaker_description_wrapper {
   display: grid;
+  // width: 100%;
   grid-template-columns: repeat(2, 1fr);
   padding-left: 4.4%;
   padding-right: 3.9%;
   @media (max-width: 1200px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    padding: 0;
   }
   @media (max-width: 848px) {
-    width: 95%;
     padding-left: 0;
     padding-right: 0;
+  }
+  @media (max-width: 545px) {
+    grid-template-columns: 1fr;
   }
 }
 .sneaker_desctiption_title {
@@ -202,6 +248,12 @@
 }
 .offset_desctiption {
   margin-top: 24px;
+  @media (max-width: 545px) {
+    margin-top: 1%;
+    overflow-y: scroll;
+    max-height: 125px;
+    height: 100%;
+  }
 }
 .sneaker_spec_wrapper {
   margin-top: 24px;
@@ -209,13 +261,25 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 10px;
+  @media (max-width: 545px) {
+    margin-top: 1%;
+  }
 }
 .sneaker_btn_wrapper {
-  width: 430px;
+  max-width: 430px;
+  width: 100%;
   height: 60px;
+  @media (max-width: 545px) {
+    margin: 0 auto;
+  }
 }
 @media (max-width: 1200px) {
-  .sneaker_spec_container {
-    margin-top: 24px;
+  .sneaker_desctiption_title {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 577px) {
+  .sneaker_desctiption_title {
+    font-size: 1.2rem;
   }
 }

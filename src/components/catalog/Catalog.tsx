@@ -20,7 +20,7 @@ const CatalogArea = styled.div`
 `;
 const CatalogContainer = styled.div`
   margin: 0 auto;
-  max-width: var(--max-width-wrapper);
+  max-width: 1180px;
   width: 95%;
   display: grid;
   grid-template-columns: 24% 1fr;
@@ -159,7 +159,7 @@ const Catalog = () => {
         <CatalogCardsWrapper>
           {loading && <Loader />}
           {!loading && items.length === 0 && (
-            <p className="total_order_value" style={{ textAlign: 'center' }}>
+            <p className="font_family" style={{ textAlign: 'center' }}>
               Список пуст
             </p>
           )}
