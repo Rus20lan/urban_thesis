@@ -60,7 +60,6 @@ const SneakerBtnWrapper = (props: sneakerBtnWrapperProps) => {
           color: '#fff',
         }}
         handleClick={handleClickBuySneaker}
-        // btnClose={true}
       />
     </div>
   );
@@ -92,7 +91,6 @@ const SneakerPage: FC<Props> = ({ idSneaker, setSneakerModal }) => {
       setSneakerModal(false); // Закрываем модалку кроссовка
     } else {
       setModalActive(true);
-      console.log('handle modal open');
     }
   };
 
