@@ -3,15 +3,13 @@ import Portal, { createContainer } from '../portal';
 import './style.scss';
 
 type Props = {
-  isModalOrder?: boolean;
   children: React.ReactNode;
   onClose?: () => void;
   isInfoModal?: boolean;
   isSneakerModal?: boolean;
 };
 const Modal = (props: Props) => {
-  const { children, onClose, isInfoModal, isSneakerModal, isModalOrder } =
-    props;
+  const { children, onClose, isInfoModal } = props;
   const [isMounted, setMounted] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -37,13 +35,7 @@ const Modal = (props: Props) => {
       }
       if (
         (event.target as Element).classList.contains('btnClose') &&
-        (isInfoModal || isModalOrder)
-      ) {
-        onClose?.();
-      }
-      if (
-        (event.target as Element).classList.contains('btnClose') &&
-        isSneakerModal
+        isInfoModal
       ) {
         onClose?.();
       }

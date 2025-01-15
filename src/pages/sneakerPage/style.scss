@@ -21,6 +21,7 @@
     grid-template-rows: 1fr 0.5fr;
   }
   @media (max-width: 545px) {
+    width: 90%;
   }
 }
 .sneaker_present {
@@ -32,7 +33,7 @@
   }
   @media (max-width: 545px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 326px 1fr;
+    grid-template-rows: 182px 1fr;
   }
 }
 .sneaker_foto_wrapper {
@@ -237,6 +238,7 @@
   }
   @media (max-width: 545px) {
     grid-template-columns: 1fr;
+    row-gap: 2%;
   }
 }
 .sneaker_desctiption_title {
@@ -251,7 +253,7 @@
   @media (max-width: 545px) {
     margin-top: 1%;
     overflow-y: scroll;
-    max-height: 125px;
+    max-height: 100px;
     height: 100%;
   }
 }
@@ -263,6 +265,7 @@
   gap: 10px;
   @media (max-width: 545px) {
     margin-top: 1%;
+    gap: 1%;
   }
 }
 .sneaker_btn_wrapper {
@@ -271,6 +274,7 @@
   height: 60px;
   @media (max-width: 545px) {
     margin: 0 auto;
+    width: 80%;
   }
 }
 @media (max-width: 1200px) {

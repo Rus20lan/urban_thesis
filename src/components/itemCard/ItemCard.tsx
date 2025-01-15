@@ -1,10 +1,10 @@
 import './style.scss';
-import { FC, useRef, useState } from 'react';
+import { FC, useState } from 'react';
 import RoundBtn from '../RoundBtn/RoundBtn';
 import eye from '../../images/eye.svg';
 import basket from '../../images/basket.svg';
 import { ISneaker } from '../../interface/ISneaker';
-import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
+import { useAppDispatch } from '../../redux/store/hooks';
 import { addGoods, removeGoods } from '../../redux/order/orderSlice';
 import { addStringGender } from '../../modules/addStringGender';
 import waste from '../../images/waste.svg';
@@ -20,8 +20,8 @@ type Props = {
 const ItemCard: FC<Props> = ({ sneaker, isLarge, isLittle }) => {
   const [isVisibleRoundBtn, setIsVisibleRoundBtn] = useState(false);
   const [isModalActive, setModalActive] = useState(false);
-  const { count } = useAppSelector((state) => state.order);
-  const prevValue = useRef(0);
+  // const { count } = useAppSelector((state) => state.order);
+  // const prevValue = useRef(0);
   const dispatch = useAppDispatch();
   // const navigate = useNavigate();
 
@@ -33,10 +33,7 @@ const ItemCard: FC<Props> = ({ sneaker, isLarge, isLittle }) => {
   // }, [count]);
 
   const handleModalClose = () => {
-    if (isModalActive && prevValue.current < count) {
-      setModalActive(false);
-      prevValue.current = count;
-    }
+    setModalActive(false);
   };
 
   const handleMouseMove = () => {
@@ -113,7 +110,10 @@ const ItemCard: FC<Props> = ({ sneaker, isLarge, isLittle }) => {
         )}
         {isModalActive && (
           <Modal onClose={handleModalClose} isSneakerModal={true}>
-            <SneakerPage idSneaker={sneaker.id} />
+            <SneakerPage
+              idSneaker={sneaker.id}
+              setSneakerModal={setModalActive}
+            />
           </Modal>
         )}
       </div>

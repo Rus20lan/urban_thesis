@@ -28,6 +28,7 @@ const initialSneaker: ISneaker = {
 };
 type Props = {
   idSneaker: number;
+  setSneakerModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 type sneakerBtnWrapperProps = {
   handleClickBuySneaker: () => void;
@@ -38,6 +39,11 @@ const ExtraWrapper = styled.div`
   height: 100%;
   padding-bottom: 20.75px;
   justify-content: space-between;
+  @media (max-width: 545px) {
+    justify-content: flex-start;
+    gap: 2%;
+    padding-bottom: 0;
+  }
 `;
 const SneakerBtnWrapper = (props: sneakerBtnWrapperProps) => {
   const { handleClickBuySneaker } = props;
@@ -47,20 +53,20 @@ const SneakerBtnWrapper = (props: sneakerBtnWrapperProps) => {
         text={'Заказать'}
         style={{
           borderRadius: '4px',
-          padding: '18px 47px',
+          padding: '2% 47px',
           width: '100%',
-          height: '100%',
+          height: 'auto',
           background: '#f14f4f',
           color: '#fff',
         }}
         handleClick={handleClickBuySneaker}
-        btnClose={true}
+        // btnClose={true}
       />
     </div>
   );
 };
 
-const SneakerPage: FC<Props> = ({ idSneaker }) => {
+const SneakerPage: FC<Props> = ({ idSneaker, setSneakerModal }) => {
   const [sneaker, setSneaker] = useState(initialSneaker);
   const [isModalActive, setModalActive] = useState(false);
   const [isActiveSize, setIsActive] = useState(0);
@@ -83,16 +89,15 @@ const SneakerPage: FC<Props> = ({ idSneaker }) => {
       const buySneaker = Object.assign({}, sneaker);
       buySneaker.sizes = [+isActiveSize];
       dispatch(addGoods(buySneaker));
+      setSneakerModal(false); // Закрываем модалку кроссовка
     } else {
-      console.log('Сообщение из sneaker page компонента');
       setModalActive(true);
+      console.log('handle modal open');
     }
   };
 
   const handleModalClose = () => {
-    setTimeout(() => {
-      setModalActive(false);
-    }, 3000);
+    setModalActive(false);
   };
 
   const stars = useMemo(() => {
@@ -180,7 +185,6 @@ const SneakerPage: FC<Props> = ({ idSneaker }) => {
           {!isScreenTb && (
             <SneakerBtnWrapper handleClickBuySneaker={handleClickBuySneaker} />
           )}
-
           <div className="sneaker_stock_wrapper">
             <p className="sneaker_stock_p">Бесплатная доставка до двери</p>
             <p className="sneaker_stock_p">Оплата заказа при получении</p>

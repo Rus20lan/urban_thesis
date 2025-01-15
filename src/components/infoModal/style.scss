@@ -8,6 +8,9 @@
   max-width: 420px;
   width: 100%;
   height: auto;
+  @media (max-width: 545px) {
+    width: 80%;
+  }
 }
 .grid_two_rows {
   display: grid;
