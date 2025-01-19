@@ -58,12 +58,7 @@ const Modal = (props: Props) => {
 
   return isMounted ? (
     <Portal id="modal-container-id">
-      <div
-        className={`wrap_body ${
-          isInfoModal ? 'wrap_body_info' : 'wrap_body_order'
-        }`}
-        ref={rootRef}
-      >
+      <div className={`wrap_body`} ref={rootRef}>
         {children}
       </div>
     </Portal>
