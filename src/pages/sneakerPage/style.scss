@@ -3,11 +3,12 @@
   margin: 0 auto;
   max-width: $max-width-wrapper;
   width: 95%;
-  margin-top: 10%;
+  margin-top: 1%;
   padding-top: 43px;
   padding-left: 41px;
   padding-bottom: 63px;
-  height: auto;
+  max-height: 848px;
+  height: 100%;
   display: grid;
   grid-template-rows: 2fr 1fr;
   row-gap: 5%;
@@ -22,6 +23,7 @@
   }
   @media (max-width: 545px) {
     width: 90%;
+    max-height: 689px;
   }
 }
 .sneaker_present {
@@ -33,7 +35,8 @@
   }
   @media (max-width: 545px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 182px 1fr;
+    grid-template-rows: 158px 1fr;
+    // grid-template-rows: 2fr 1fr;
   }
 }
 .sneaker_foto_wrapper {
@@ -72,7 +75,7 @@
     padding-right: 0;
   }
   @media (max-width: 545px) {
-    max-height: 152px;
+    max-height: 200px;
     height: 100%;
     overflow-y: scroll;
   }
